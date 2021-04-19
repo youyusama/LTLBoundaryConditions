@@ -7,7 +7,7 @@ from GORE import GoreCase
 
 gore_cases = []
 
-case_file = io.open('GORE_case.txt', 'r', encoding='utf-8')
+case_file = io.open('test_case.txt', 'r', encoding='utf-8')
 temp_case = {}
 for line in case_file.readlines():
   line = line.rstrip('\n')
@@ -24,8 +24,10 @@ for line in case_file.readlines():
       temp_case['goals'] = line.split(',')
       gore_cases.append(temp_case)
 
-gclist = []
+gc_list = []
 for case in gore_cases:
-  gclist.append(GoreCase(case['name'], case['doms'], case['goals']))
+  gc_list.append(GoreCase(case['name'], case['doms'], case['goals']))
 
-gclist[0].showdg()
+gc_list[0].showdg()
+print(gc_list[0].isBC('F(r&p)'))
+print(gc_list[0].isWitness('((q&!s)|(p&G !q)|F(r&F s))', 'F(r&p)'))
