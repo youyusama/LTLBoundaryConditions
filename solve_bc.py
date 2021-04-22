@@ -7,7 +7,7 @@ from GORE import GoreCase
 
 gore_cases = []
 
-case_file = io.open('test_case.txt', 'r', encoding='utf-8')
+case_file = io.open('GORE_case.txt', 'r', encoding='utf-8')
 temp_case = {}
 for line in case_file.readlines():
   line = line.rstrip('\n')
@@ -28,6 +28,8 @@ gc_list = []
 for case in gore_cases:
   gc_list.append(GoreCase(case['name'], case['doms'], case['goals']))
 
-gc_list[0].showdg()
-print(gc_list[0].isBC('F(r&p)'))
-print(gc_list[0].isWitness('((q&!s)|(p&G !q)|F(r&F s))', 'F(r&p)'))
+nonsense_bc = gc_list[7].getNonsenseBC()
+print(nonsense_bc)
+for bc in nonsense_bc:
+  print(gc_list[7].isBC(bc))
+# print(spot.formula('').to_str('spin'))
