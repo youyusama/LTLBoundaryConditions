@@ -35,7 +35,10 @@ gc_list = []
 for case in gore_cases:
   gc_list.append(GoreCase(case['name'], case['doms'], case['goals'], case['BC']))
 
-print(gc_list[2].isBC('F (call&!open&( G(!atfloor & Xopen) | G(!atfloor & !open) ))', show_reason=True))
+
+print(sat_check_aalta(spot.formula('Gb &  (!a | !b)').to_str('spin')))
+
+# print(gc_list[2].isBC('F (call&!open&( G(!atfloor & Xopen) | G(!atfloor & !open) ))', show_reason=True))
 # nonsense_bc = gc_list[7].getNonsenseBC()
 # for bc in nonsense_bc:
 #   print(gc_list[7].isBC(bc))
