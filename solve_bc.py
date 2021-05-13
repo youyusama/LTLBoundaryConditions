@@ -36,50 +36,24 @@ for case in gore_cases:
   gc_list.append(GoreCase(case['name'], case['doms'], case['goals'], case['BC']))
 
 
-print(sat_check_aalta(spot.formula('Gb &  (!a | !b)').to_str('spin')))
+# print(sat_check_aalta(spot.formula('Gb &  (!a | !b)').to_str('spin')))
 
 # print(gc_list[2].isBC('F (call&!open&( G(!atfloor & Xopen) | G(!atfloor & !open) ))', show_reason=True))
 # nonsense_bc = gc_list[7].getNonsenseBC()
 # for bc in nonsense_bc:
 #   print(gc_list[7].isBC(bc))
 # print(spot.formula('').to_str('spin'))
-# for gc in gc_list:
-#   print(gc.name)
-#   nonsense_bc = gc.getNonsenseBC()
-#   for bc in gc.gen_t_bc:
-#     print('check:' + bc.to_str('spin'))
-#     if not gc.isBC(bc, show_reason=True):
-#       print(bc)
-#   for bc in nonsense_bc:
-#     if not gc.isBC(bc, show_reason=True):
-#       print(bc)
-
-# a1 = ''
-# for a in spot.automata('''
-# HOA: v1
-# States: 4
-# Start: 0
-# AP: 3 "call" "open" "atfloor"
-# acc-name: Buchi
-# Acceptance: 1 Inf(0)
-# properties: trans-labels explicit-labels state-acc
-# --BODY--
-# State: 0
-# [!0 | 1] 0
-# [0&!1] 1
-# [!0&!2 | 1&!2] 2
-# State: 1
-# [!1] 1
-# [1] 3
-# State: 2
-# [1] 3
-# State: 3 {0}
-# [0&!1] 1
-# [t] 3
-# --END--
-# '''
-# ):
-#   a1 = a
-# a2 = spot.formula('G (X open->atfloor)').translate('BA', 'Deterministic')
-# prod = spot.product(a1, a2)
-# print(prod.to_str())
+# for bc in gc_list[0].gen_t_bc:
+#   print(bc.to_str('spin'))
+for gc in gc_list:
+  print(gc.name)
+  nonsense_bc = gc.getNonsenseBC()
+  excluded_bc = set()
+  for n_bc in nonsense_bc:
+    for bc in gc.gen_t_bc:
+      if gc.isGeneral(n_bc, bc) or gc.isWitness(n_bc, bc):
+        excluded_bc.add(bc)
+  if len(excluded_bc) < len(gc.gen_t_bc):
+    for bc in gc.gen_t_bc:
+      if bc in excluded_bc:
+        print(bc)

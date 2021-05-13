@@ -1,0 +1,26 @@
+CASE:minepump#7
+DOM:[[]((p && X(p)) -> X(X(! h)))]
+GOALS:[[](h -> X(p)), [](m -> X(! p))]
+BC:
+( [] ( ( p ) U ( X ( ( m ) /\ ( <> ( h ) ) ) ) ) )
+
+
+CASE:prioritized_arbiter#8
+DOM:[[] (<> (! r_m))]
+GOALS:[[] (r_m -> X ((! g_0 && ! g_1) U g_m)), [] (! g_0 && true || (true && (! g_1))), [] (! (g_m && g_0)), [] (! (g_m && g_1)), [] (r_0 -> <> g_0) && [] (r_1 -> <> g_1), [] (r_0 && X r_1 -> X (X (g_0 && g_1)))]
+BC:
+( ( <> ( ( r_1 ) /\ ( [] ( g_0 ) ) ) ) W ( ( r_m ) /\ ( X ( ( ! ( g_0 ) ) \/ ( g_1 ) ) ) ) )
+( [] ( X ( <> ( ( r_m ) /\ ( ( true ) /\ ( true ) ) ) ) ) )
+( [] ( X ( <> ( ( r_m ) W ( r_m ) ) ) ) )
+
+CASE:rrcs#12
+DOM:[[] (ta <-> X(tc)), [] (X(cc) -> ca && go)]
+GOALS:[[] (ta -> !go), [] (tc -> !cc)]
+BC:
+F (((~cc & (go & ta)) | (cc & ((~go & tc) | (go & (ta | tc))))))
+
+CASE:london-ambulance#16
+DOM:[]
+GOALS:[G(accident -> medicalemergency),G(call && medicalemergency && nearestambulanceavailable -> dispatchambulance),G(call && !nearestambulanceavailable -> !dispatchambulance),G(!hascrew -> !nearestambulanceavailable),G(!nearestambulanceavailable -> !nocallissue)]
+BC:
+F (((~accident & ((~call & ((~hascrew & (nearestambulanceavailable | nocallissue)) | (hascrew & (~nearestambulanceavailable & nocallissue)))) | (call & ((~dispatchambulance & ((~hascrew & (nearestambulanceavailable | nocallissue)) | (hascrew & ((~medicalemergency & (~nearestambulanceavailable & nocallissue)) | (medicalemergency & (nearestambulanceavailable | nocallissue)))))) | (dispatchambulance & (~hascrew | ~nearestambulanceavailable)))))) | (accident & ((~call & ((~hascrew & (~medicalemergency | (nearestambulanceavailable | nocallissue))) | (hascrew & (~medicalemergency | (~nearestambulanceavailable & nocallissue))))) | (call & ((~dispatchambulance & (~medicalemergency | (nearestambulanceavailable | nocallissue))) | (dispatchambulance & (~hascrew | (~medicalemergency | ~nearestambulanceavailable)))))))))

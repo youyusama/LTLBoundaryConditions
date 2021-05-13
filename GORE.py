@@ -27,14 +27,14 @@ class GoreCase:
         print('trivial')
       return False
     #logical incosistency
-    if sat_check_aalta(spot.formula_And(self.doms + self.goals + [bc,]).to_str('spin').replace('X', 'X ')):
+    if sat_check_aalta(spot.formula_And(self.doms + self.goals + [bc,]).to_str('spin')):
       if show_reason:
         print('consistency')
       return False
     else:
     #minimality
       for i in range(len(self.goals)):
-        if not sat_check_aalta(spot.formula_And(self.doms + [goal for goal in self.goals if goal != self.goals[i]] + [bc,]).to_str('spin').replace('X', 'X ')):
+        if not sat_check_aalta(spot.formula_And(self.doms + [goal for goal in self.goals if goal != self.goals[i]] + [bc,]).to_str('spin')):
           if show_reason:
             print('not minimality, bc: ' + bc.to_str() + 'goals: ' + str([goal.to_str() for goal in self.goals if goal != self.goals[i]]))
           return False
