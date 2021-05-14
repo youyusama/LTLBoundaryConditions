@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/usr/local/lib/python3.8/site-packages')
 import spot
-from aalta import sat_check_aalta
+from ltl_sat_check import sat_check
 import io
 from GORE import GoreCase
 
@@ -36,15 +36,10 @@ for case in gore_cases:
   gc_list.append(GoreCase(case['name'], case['doms'], case['goals'], case['BC']))
 
 
-# print(sat_check_aalta(spot.formula('Gb &  (!a | !b)').to_str('spin')))
+# f = spot.formula('[](l -> <>!l) && [](!p -> (!m && X l)) && []((!l && p) -> m) && X X (!m && []!l)')
+# a = f.translate('ba')
+# print(a.is_empty())
 
-# print(gc_list[2].isBC('F (call&!open&( G(!atfloor & Xopen) | G(!atfloor & !open) ))', show_reason=True))
-# nonsense_bc = gc_list[7].getNonsenseBC()
-# for bc in nonsense_bc:
-#   print(gc_list[7].isBC(bc))
-# print(spot.formula('').to_str('spin'))
-# for bc in gc_list[0].gen_t_bc:
-#   print(bc.to_str('spin'))
 for gc in gc_list:
   print(gc.name)
   nonsense_bc = gc.getNonsenseBC()
@@ -55,5 +50,5 @@ for gc in gc_list:
         excluded_bc.add(bc)
   if len(excluded_bc) < len(gc.gen_t_bc):
     for bc in gc.gen_t_bc:
-      if bc in excluded_bc:
+      if bc not in excluded_bc:
         print(bc)

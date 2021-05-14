@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/usr/local/lib/python3.8/site-packages')
 import spot
-from aalta import sat_check_aalta
+from ltl_sat_check import sat_check
 
 class GoreCase:
   def __init__(self, name, doms, goals, bcs):
@@ -27,14 +27,14 @@ class GoreCase:
         print('trivial')
       return False
     #logical incosistency
-    if sat_check_aalta(spot.formula_And(self.doms + self.goals + [bc,]).to_str('spin')):
+    if sat_check(spot.formula_And(self.doms + self.goals + [bc,]).to_str('spin')):
       if show_reason:
         print('consistency')
       return False
     else:
     #minimality
       for i in range(len(self.goals)):
-        if not sat_check_aalta(spot.formula_And(self.doms + [goal for goal in self.goals if goal != self.goals[i]] + [bc,]).to_str('spin')):
+        if not sat_check(spot.formula_And(self.doms + [goal for goal in self.goals if goal != self.goals[i]] + [bc,]).to_str('spin')):
           if show_reason:
             print('not minimality, bc: ' + bc.to_str() + 'goals: ' + str([goal.to_str() for goal in self.goals if goal != self.goals[i]]))
           return False
@@ -45,7 +45,7 @@ class GoreCase:
       bc1 = spot.formula(bc1)
     if type(bc2) is str:
       bc2 = spot.formula(bc2)
-    if not sat_check_aalta(spot.formula_And([bc2, spot.formula_Not(bc1)]).to_str('spin')):
+    if not sat_check(spot.formula_And([bc2, spot.formula_Not(bc1)]).to_str('spin')):
       return True
     else:
       return False
