@@ -1,4 +1,6 @@
 import sys
+
+from spot.impl import formula
 sys.path.append('/usr/local/lib/python3.8/site-packages')
 import spot
 from ltl_sat_check import sat_check
@@ -10,19 +12,22 @@ class GoreCase:
     self.goals = [spot.formula(goal) for goal in goals]
     self.gen_t_bc = [spot.formula(bc) for bc in bcs] if len(bcs) > 0 else []
 
+
   def showdg(self):
     print(spot.formula_And(self.doms+self.goals).to_str('spin'))
+
 
   def isBC(self, bc, show_reason = False):
     if type(bc) is str:
       bc = spot.formula(bc)
     c = spot.language_containment_checker()
     #non-triviality
-    if c.equal(spot.formula('true'), bc) or c.equal(spot.formula('false'), bc):
+    if not sat_check(bc.to_str('spin')) or not sat_check(spot.formula_Not(bc).to_str('spin')):
       if show_reason:
-        print('bc is true') if c.equal(spot.formula('true'), bc) else print('bc is false')
+        print('bc is true or false')
       return False
-    if c.equal(spot.formula_Not(spot.formula_And(self.goals)), bc):
+    not_g_d = spot.formula_Not(spot.formula_And(self.goals))
+    if not sat_check(spot.formula_And([not_g_d, spot.formula_Not(bc)]).to_str('spin')) and not sat_check(spot.formula_And([spot.formula_Not(not_g_d), bc]).to_str('spin')):
       if show_reason:
         print('trivial')
       return False
@@ -40,6 +45,7 @@ class GoreCase:
           return False
     return True
 
+
   def isGeneral(self, bc1, bc2):
     if type(bc1) is str:
       bc1 = spot.formula(bc1)
@@ -50,6 +56,7 @@ class GoreCase:
     else:
       return False
 
+
   def isWitness(self, bc1, bc2):
     if type(bc1) is str:
       bc1 = spot.formula(bc1)
@@ -59,9 +66,7 @@ class GoreCase:
       return True
     else:
       return False
-  
-  def det_aut_get_bc(self):
-    aut = spot.formula_Not(spot.formula_And(self.doms + self.goals)).translate('BA', 'Deterministic')
+
 
   def getNonsenseBC(self):
     f = spot.formula_Not(spot.formula_And(self.doms + self.goals))

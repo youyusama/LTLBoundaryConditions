@@ -8,12 +8,12 @@ import spot
 def sat_check(ltl):
   #aalta
   ltl = ltl.replace('X', 'X ')
+  # print('aalta check: ' + ltl)
   p = subprocess.Popen(AALTA_PATH, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
   p.stdin.write(ltl.encode())
   p.stdin.close()
   try:
     p.wait(3)
-    # print('aalta check: ' + ltl)
     res = p.stdout.read().decode('utf-8').split('\n')
     # print(res)
     if len(res) == 3:

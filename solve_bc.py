@@ -36,19 +36,36 @@ for case in gore_cases:
   gc_list.append(GoreCase(case['name'], case['doms'], case['goals'], case['BC']))
 
 
+def check_nonsensebc_right():
+  for gc in gc_list:
+    print(gc.name)
+    nonsense_bc = gc.getNonsenseBC()
+    for bc in nonsense_bc:
+      print(gc.isBC(bc, show_reason = True))
+
+
+def is_nonsense_good():
+  output_file = io.open('case_result.txt', 'w+', encoding = 'utf-8')
+  for gc in gc_list:
+    print(gc.name)
+    output_file.write('case: ' + gc.name + '-----------------------------\n')
+    nonsense_bc = gc.getNonsenseBC()
+    excluded_bc = set()
+    for n_bc in nonsense_bc:
+      for bc in gc.gen_t_bc:
+        if gc.isGeneral(n_bc, bc):
+          excluded_bc.add(bc)
+          output_file.write('bc: ' + bc.to_str() +'\n be generaled by n_bc: ' + n_bc.to_str() + '\n')
+        elif gc.isWitness(n_bc, bc):
+          excluded_bc.add(bc)
+          output_file.write('bc: ' + bc.to_str() +'\n be witnessed by n_bc: ' + n_bc.to_str() + '\n')
+    if len(excluded_bc) < len(gc.gen_t_bc):
+      for bc in gc.gen_t_bc:
+        if bc not in excluded_bc:
+          print(bc)
+
+if __name__ == '__main__':
+  check_nonsensebc_right()
 # f = spot.formula('[](l -> <>!l) && [](!p -> (!m && X l)) && []((!l && p) -> m) && X X (!m && []!l)')
 # a = f.translate('ba')
 # print(a.is_empty())
-
-for gc in gc_list:
-  print(gc.name)
-  nonsense_bc = gc.getNonsenseBC()
-  excluded_bc = set()
-  for n_bc in nonsense_bc:
-    for bc in gc.gen_t_bc:
-      if gc.isGeneral(n_bc, bc) or gc.isWitness(n_bc, bc):
-        excluded_bc.add(bc)
-  if len(excluded_bc) < len(gc.gen_t_bc):
-    for bc in gc.gen_t_bc:
-      if bc not in excluded_bc:
-        print(bc)
