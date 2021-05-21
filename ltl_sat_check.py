@@ -1,8 +1,8 @@
 import subprocess
-AALTA_PATH = '/root/aalta-master/aalta'
+AALTA_PATH = '/home/youyu/aalta/aalta'
 # case_file = io.open('unsat.txt', 'w+', encoding='utf-8')
 import sys
-sys.path.append('/usr/local/lib/python3.8/site-packages')
+sys.path.append('/usr/local/lib/python3.9/site-packages')
 import spot
 
 def sat_check(ltl):

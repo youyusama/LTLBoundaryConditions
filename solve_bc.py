@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/usr/local/lib/python3.8/site-packages')
+sys.path.append('/usr/local/lib/python3.9/site-packages')
 import spot
 from ltl_sat_check import sat_check
 import io
@@ -62,10 +62,11 @@ def is_nonsense_good():
     if len(excluded_bc) < len(gc.gen_t_bc):
       for bc in gc.gen_t_bc:
         if bc not in excluded_bc:
-          print(bc)
+          print('!!!!\n' + bc.to_str())
 
 if __name__ == '__main__':
-  check_nonsensebc_right()
+  # check_nonsensebc_right()
+  is_nonsense_good()
 # f = spot.formula('[](l -> <>!l) && [](!p -> (!m && X l)) && []((!l && p) -> m) && X X (!m && []!l)')
 # a = f.translate('ba')
 # print(a.is_empty())
