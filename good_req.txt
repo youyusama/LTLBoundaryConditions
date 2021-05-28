@@ -1,0 +1,48 @@
+CASE:loadbalancer#6
+DOM:[
+    [] (<> idle), 
+    [] (X (! grant_0) || X ((! request_0 && ! idle) U (! request_0 && idle)))
+    ]
+GOALS:[
+    [](X grant_1 -> request_1), 
+    ! <> ([] (request_0 && X (! grant_0))), 
+    ! <> ([] (request_1 && X (! grant_1))), 
+    [] (X (! grant_0 && true || (true && (! grant_1)))), 
+    [](request_0 && X request_1 -> X (X (grant_0 && grant_1))), 
+    [](! idle -> X (! grant_0 && ! grant_1)), 
+    [](request_0 -> grant_1), 
+    [](X grant_0 -> request_0)
+    ]
+
+
+CASE:liftcontroller#5
+DOM:[
+    []((b1 && f1) -> X(!b1)),
+    []((b2 && f2) -> X(!b2)),
+    []((b3 && f3) -> X(!b3)),
+
+    []((b1 && !f1) -> X(b1)),
+    []((b2 && !f2) -> X(b2)),
+    []((b3 && !f3) -> X(b3)), 
+
+    !b1 && !b2 && !b3
+    ]
+GOALS:[
+    f1 && !f2 && !f3,
+
+    [](!(f1 && f2) && !(f1 && f3) && !(f2 && f3)), 
+
+    [](f1 -> X (f1 || f2)), 
+    [](f2 -> X (f1 || f2 || f3))
+    [](f3 -> X (f2 || f3)), 
+
+    [](((f1 && X(f2)) || (f2 && X(f3))) -> X (b1 || b2 || b3)), 
+
+    []<>(b1 -> f1), 
+    []<>(b2 -> f2), 
+    []<>(b3 -> f3),     
+
+    []<>(f1), 
+    []<>(f2),     
+    []<>(f3), 
+    ]

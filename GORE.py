@@ -26,8 +26,8 @@ class GoreCase:
       if show_reason:
         print('bc is true or false')
       return False
-    not_g_d = spot.formula_Not(spot.formula_And(self.goals))
-    if not sat_check(spot.formula_And([not_g_d, spot.formula_Not(bc)]).to_str('spin')) and not sat_check(spot.formula_And([spot.formula_Not(not_g_d), bc]).to_str('spin')):
+    not_g = spot.formula_Not(spot.formula_And(self.goals))
+    if not sat_check(spot.formula_And([not_g, spot.formula_Not(bc)]).to_str('spin')) and not sat_check(spot.formula_And([spot.formula_Not(not_g), bc]).to_str('spin')):
       if show_reason:
         print('trivial')
       return False
@@ -41,7 +41,7 @@ class GoreCase:
       for i in range(len(self.goals)):
         if not sat_check(spot.formula_And(self.doms + [goal for goal in self.goals if goal != self.goals[i]] + [bc,]).to_str('spin')):
           if show_reason:
-            print('not minimality, bc: ' + bc.to_str() + 'goals: ' + str([goal.to_str() for goal in self.goals if goal != self.goals[i]]))
+            print('not minimality')
           return False
     return True
 
@@ -68,6 +68,24 @@ class GoreCase:
       return False
 
 
+  def its_impossible(self):
+    for i in range(len(self.goals)):
+      if not sat_check( spot.formula_And( self.doms + [goal if goal != self.goals[i] else spot.formula_Not(goal) for goal in self.goals ] ).to_str('spin') ):
+        print('why')
+
+
+  def is_not_gd_BC(self):
+    not_g_d = spot.formula_Not(spot.formula_And(self.goals + self.doms))
+    #logical incosistency
+    if sat_check(spot.formula_And(self.doms + self.goals + [not_g_d,]).to_str('spot')):
+      return False
+    else:
+    #minimality
+      for i in range(len(self.goals)):
+        if not sat_check(spot.formula_And(self.doms + [goal for goal in self.goals if goal != self.goals[i]] + [not_g_d,]).to_str('spin')):
+          return False
+    return True
+
   def getNonsenseBC(self):
     f = spot.formula_Not(spot.formula_And(self.doms + self.goals))
     sim_option = spot.tl_simplifier_options()
@@ -75,7 +93,7 @@ class GoreCase:
     sim = spot.tl_simplifier(sim_option)
     f = sim.simplify(f)
     # ap = []
-    # for child in f:
+    # for child in f:a
     #   if child.kind() == spot.op_ap:
     #     ap.append(spot.formula_F(child))
     
@@ -83,7 +101,7 @@ class GoreCase:
     # print(f)
     nonsense_bc = []
     for child_i in f:
-      if child_i.kind() != spot.op_ap:
+      if child_i.kind() == spot.op_F:
         nonsense_bc.append(spot.formula_Or([child if child != child_i else child[0] for child in f]))
     return nonsense_bc
         

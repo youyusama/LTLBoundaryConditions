@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/usr/local/lib/python3.9/site-packages')
+sys.path.append('/usr/local/lib/python3.8/site-packages')
 import spot
 from ltl_sat_check import sat_check
 import io
@@ -7,7 +7,7 @@ from GORE import GoreCase
 
 gore_cases = []
 
-case_file = io.open('GORE_case.txt', 'r', encoding='utf-8')
+case_file = io.open('long_case.txt', 'r', encoding='utf-8')
 temp_case = {}
 in_bc = False
 for line in case_file.readlines():
@@ -38,11 +38,27 @@ for case in gore_cases:
 
 def check_nonsensebc_right():
   for gc in gc_list:
-    print(gc.name)
+    print('check goal case: ', gc.name)
     nonsense_bc = gc.getNonsenseBC()
     for bc in nonsense_bc:
-      print(gc.isBC(bc, show_reason = True))
+      print('\nbc: ', bc.to_str(), '\n', str(gc.isBC(bc, show_reason = True)))
 
+def is_bc_right():
+  for gc in gc_list:
+    print(gc.name)
+    for bc in gc.gen_t_bc:
+      print('\nbc: ', bc.to_str(), '\n', str(gc.isBC(bc, show_reason = True)))
+      # print(bc,gc.isBC(bc))
+
+def why_imp():
+  for gc in gc_list:
+    print(gc.name)
+    gc.its_impossible()
+
+def not_gd_bc():
+  for gc in gc_list:
+    print(gc.name, gc.is_not_gd_BC())
+    gc.is_not_gd_BC()
 
 def is_nonsense_good():
   output_file = io.open('case_result.txt', 'w+', encoding = 'utf-8')
@@ -65,8 +81,15 @@ def is_nonsense_good():
           print('!!!!\n' + bc.to_str())
 
 if __name__ == '__main__':
+  # is_bc_right()
+  not_gd_bc()
+  # why_imp()
   # check_nonsensebc_right()
-  is_nonsense_good()
-# f = spot.formula('[](l -> <>!l) && [](!p -> (!m && X l)) && []((!l && p) -> m) && X X (!m && []!l)')
-# a = f.translate('ba')
-# print(a.is_empty())
+  # is_nonsense_good()
+  # f1 = spot.formula('[]<>idle && [](X!grant_0 || X((!idle && !request_0) U (idle && !request_0))) && [](Xgrant_1 -> request_1) && !<>[](request_1 && X!grant_1) && []X(!grant_0 || !grant_1) && []((request_0 && Xrequest_1) -> XX(grant_0 && grant_1)) && [](!idle -> X(!grant_0 && !grant_1)) && [](request_0 -> grant_1) && [](Xgrant_0 -> request_0) && ([](request_0 && X!grant_0) || <>[](request_1 && X!grant_1) || <>[]!idle || <>(Xgrant_0 && X((idle || request_0) V (!idle || request_0))) || <>(!request_1 && Xgrant_1) || <>X(grant_0 && grant_1) || <>(request_0 && Xrequest_1 && XX(!grant_0 || !grant_1)) || <>(!idle && X(grant_0 || grant_1)) || <>(!grant_1 && request_0) || <>(!request_0 && Xgrant_0))')
+  # f2 = spot.formula('F ( p & r & !s ) U (p & !r & !s )')
+  # a = f1.translate('ba')
+  # print(a.is_empty())
+  # print(sat_check(f1.to_str()))
+  # print(sat_check(spot.formula_And([spot.formula_Not(f1), f2]).to_str()))
+  # print(sat_check(spot.formula_And([f1, spot.formula_Not(f2) ]).to_str()))
