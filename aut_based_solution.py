@@ -90,11 +90,16 @@ def get_bc_by_aut(gc):
   output_file.write('case name: ' + gc.name + '\n')
   start_time = time.time()
 
+  # translate the automata Dom & !G
   dng_aut = gc.dandng_aut()
+  # calculate the automata phi by the reachability production
   aut_phi = filter_ngd(dng_aut, gc.goals)
+  # show graph
   aut_phi.save('output.dot', format='dot')
+  # get bcs from automata phi
   pbcs = get_pbcs_from_aut(aut_phi)
 
+  # check the solved bcs
   for pbc in pbcs:
     no_relation_gi = []
     isBC_result = gc.isBC_t(pbc, no_relation_gi)
