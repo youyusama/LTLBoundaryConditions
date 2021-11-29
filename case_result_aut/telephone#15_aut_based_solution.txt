@@ -1,0 +1,4 @@
+case name: telephone#15
+the potential BC: c & !d & !f & !o
+
+bc solving time: 0.008328676223754883

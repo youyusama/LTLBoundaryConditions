@@ -1,0 +1,3 @@
+case name: atm#2
+
+bc solving time: 0.012977361679077148

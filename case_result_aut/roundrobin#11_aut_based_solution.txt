@@ -1,0 +1,13 @@
+case name: roundrobin#11
+the potential BC: (!g_0 & !g_1 & r_0 & !r_1) | (!g_0 & g_1 & r_0 & r_1)
+the potential BC: !g_0 & !g_1 & !r_0 & r_1
+*** the confirmed BC: 
+ - g_0 & !g_1 & r_0 & r_1
+between the goals: 
+goal: G(!g_0 | (!g_1 & (!r_0 | X(!r_1 | X(g_0 & g_1)))))
+the potential BC: !g_0 & !g_1 & r_0 & r_1
+the potential BC: !g_0 & !g_1 & r_0 & r_1
+the potential BC: g_0 & !g_1 & !r_0 & r_1
+the potential BC: !g_0 & g_1 & r_0 & !r_1
+
+bc solving time: 0.09827876091003418

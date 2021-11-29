@@ -1,0 +1,10 @@
+case name: achievepattern#0
+solved bc num: 4
+bc solving time: 0.0055065155029296875
+e: (r & (1 U s)) | !G(p -> Fq)
+e: X(r & (1 U s)) | !G(p -> Fq)
+e: (p & G!q) | !G(r -> G!s)
+e: X(p & G!q) | !G(r -> G!s)
+solved bc num: 1
+bc solving time: 0.10686993598937988
+e: (p & G!q) | !G(r -> G!s)

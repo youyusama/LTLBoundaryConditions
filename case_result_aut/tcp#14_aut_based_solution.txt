@@ -1,0 +1,5 @@
+case name: tcp#14
+the potential BC: !ack & delivered & !send
+the potential BC: !ack & !delivered & send
+
+bc solving time: 0.006269693374633789

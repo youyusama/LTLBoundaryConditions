@@ -1,0 +1,4 @@
+case name: retraction_pattern1#9
+the potential BC: p & !q
+
+bc solving time: 0.0035026073455810547

@@ -1,0 +1,3 @@
+case name: rrcs#12
+
+bc solving time: 0.0048253536224365234

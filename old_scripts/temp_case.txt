@@ -1,0 +1,5 @@
+CASE:retraction_pattern1#9
+DOM:[]
+GOALS:[[] (p -> <>(q)), [] (q -> p)]
+BC:
+p & !q & XG !p

@@ -1,0 +1,9 @@
+case name: loadbalancer#6
+the confirmed BC: 
+ - grant_1 & idle & request_0 & request_1 & X(!grant_1 & idle & !request_0 & request_1)
+between the goals: 
+goal: G(!request_0 | X(!request_1 | X(grant_0 & grant_1)))
+goal: G(request_0 | X!grant_0)
+the potential BC: idle & !request_0 & request_1 & X(!grant_0 & !grant_1 & idle & !request_0 & request_1)
+
+bc solving time: 0.06685781478881836

@@ -1,0 +1,3 @@
+case name: las#4
+
+bc solving time: 0.0051500797271728516

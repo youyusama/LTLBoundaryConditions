@@ -1,0 +1,15 @@
+case name: simple_arbiter#13
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & r1 & !r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & !r1 & r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & r1 & r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & r1 & r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & r1 & !r2) & XX(g1 & !g2 & r1 & r2) & XXX(g1 & !g2 & !r1 & r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & !r1 & r2) & XX(!g1 & g2 & r1 & r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & !r1 & r2) & XX(!g1 & g2 & r1 & r2) & XXX(!g1 & g2 & r1 & !r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & !r1 & r2) & XXX(!g1 & g2 & r1 & !r2) & XX(!g1 & g2 & !r1 & r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & !r1 & r2) & XX(!g1 & g2 & !r1 & r2) & XXX(!g1 & g2 & !r1 & !r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & r1 & !r2) & XX(g1 & !g2 & r1 & r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & r1 & !r2) & XXX(g1 & !g2 & !r1 & r2) & XX(g1 & !g2 & r1 & !r2)
+the potential BC: !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & r1 & !r2) & XX(g1 & !g2 & r1 & !r2) & XXX(g1 & !g2 & !r1 & !r2)
+
+bc solving time: 0.22983503341674805

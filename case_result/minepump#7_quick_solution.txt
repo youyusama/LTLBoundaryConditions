@@ -1,0 +1,12 @@
+case name: minepump#7
+solved bc num: 4
+bc solving time: 0.008171796798706055
+ - (h & X!p) | !G(m -> X!p)
+ - X(h & X!p) | !G(m -> X!p)
+ - (m & Xp) | !G(h -> Xp)
+ - X(m & Xp) | !G(h -> Xp)
+
+contrastive bc num: 1
+bc evaluation time: 0.07016992568969727
+ - (m & Xp) | !G(h -> Xp)
+cover rate: 0.85

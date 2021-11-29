@@ -1,0 +1,13 @@
+CASE:rrcs#12
+DOM:[[] (ta <-> X(tc)), [] (X(cc) -> ca && go)]
+GOALS:[[] (ta -> !go), [] (tc -> !cc)]
+BC:
+( (( F(( ( go ) & ( ta ) )) ) U ( F(( ( cc ) & ( tc ) )) )) | G(( F(( ( go ) & ( ta ) )) )) )
+( (( F(( G(( ( go ) & ( ta ) )) )) ) U ( ( FALSE ) U ( ( cc ) & ( tc ) ) )) | G(( F(( G(( ( go ) & ( ta ) )) )) )) )
+( (( F(( ( go ) & ( ta ) )) ) U ( F(( ( cc ) & ( tc ) )) )) | G(( F(( ( go ) & ( ta ) )) )) )
+( (( ( go ) & ( ta ) ) U ( ( F(( FALSE )) ) U ( ( cc ) & ( tc ) ) )) | G(( ( go ) & ( ta ) )) )
+( (( G(( ( go ) & ( ta ) )) ) U ( F(( ( cc ) & ( tc ) )) )) | G(( G(( ( go ) & ( ta ) )) )) )
+( (( G(( ( go ) & ( ta ) )) ) U ( F(( ( cc ) & ( tc ) )) )) | G(( G(( ( go ) & ( ta ) )) )) )
+( (( ( go ) & ( ta ) ) U ( F(( ( ( ta ) & ( X(( !(( tc )) )) ) ) | ( ( cc ) & ( tc ) ) )) )) | G(( ( go ) & ( ta ) )) )
+( (( X(( G(( ( go ) & ( ta ) )) )) ) U ( ( X(( G(( ( go ) & ( ta ) )) )) ) U ( ( cc ) & ( tc ) ) )) | G(( X(( G(( ( go ) & ( ta ) )) )) )) )
+( ( ( go ) & ( ta ) ) | ( ( cc ) & ( tc ) ) )

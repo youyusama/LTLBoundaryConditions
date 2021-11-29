@@ -1,0 +1,278 @@
+case name: prioritized_arbiter#8
+the potential BC: (!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)
+the potential BC: g_0 & !g_1 & !g_m & r_0 & !r_1 & r_m
+the potential BC: (!g_0 & !g_1 & r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & r_0 & r_m)
+the potential BC: (!g_0 & !g_1 & !r_0 & r_1 & r_m) | (!g_1 & !g_m & !r_0 & r_1 & r_m)
+the potential BC: g_0 & !g_1 & !g_m & r_0 & r_1 & r_m
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & r_m
+the potential BC: (!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & !r_m
+the potential BC: (!g_0 & !g_1 & r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & r_0 & r_m)
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & r_m
+the potential BC: (!g_0 & !g_1 & !r_0 & r_1 & !r_m) | (!g_1 & !g_m & !r_0 & r_1 & !r_m)
+the potential BC: g_0 & !g_1 & !g_m & r_0 & r_1 & !r_m
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & !r_m
+the potential BC: (!g_0 & !g_1 & !r_0 & r_1 & r_m) | (!g_1 & !g_m & !r_0 & r_1 & r_m)
+the potential BC: g_0 & !g_1 & !g_m & r_0 & r_1 & r_m
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & r_m
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & !r_m & X(!g_0 & !g_1 & !r_0 & !r_1 & r_m)
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & !g_1 & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - !g_0 & !g_1 & r_0 & r_1 & !r_m & X(!g_0 & !g_1 & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & !g_1 & r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & !g_1 & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & !g_1 & r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - !g_0 & !g_1 & r_0 & r_1 & !r_m & X(!g_0 & !g_1 & !r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & !g_1 & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - !g_0 & !g_1 & r_0 & r_1 & !r_m & X(!g_0 & !g_1 & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & r_m & X(!g_0 & !g_1 & !g_m & !r_0 & !r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)) & X(!g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & r_m & X(!g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - !g_0 & !g_1 & r_0 & r_1 & r_m & X(!g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+the potential BC: ((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)) & X(!g_0 & !g_1 & !g_m & r_0 & r_1)
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & r_m & X(!g_0 & !g_1 & !g_m & r_0 & r_1)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & r_m & X(!g_0 & !g_1 & !g_m & r_0 & r_1)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - !g_0 & !g_1 & r_0 & r_1 & r_m & X(!g_0 & !g_1 & !g_m & !r_0 & r_1)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & !r_m & X(!g_0 & !g_1 & !r_0 & !r_1 & !r_m) & XX(!g_0 & !g_1 & !r_0 & r_1 & !r_m)
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & !r_m & X(!g_0 & !g_1 & !r_0 & !r_1 & !r_m) & XX(!g_0 & !g_1 & !r_0 & r_1 & r_m)
+the potential BC: !g_0 & !g_1 & r_0 & r_1 & !r_m & X(!g_0 & !g_1 & !r_0 & !r_1 & r_m) & XX(!g_0 & !g_1 & !g_m & !r_0 & r_1)
+the potential BC: ((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)) & X(!g_0 & !g_1 & !g_m & r_0 & r_1)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & !g_m & !r_0 & !r_1 & r_m))
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & XX(!g_0 & !g_1 & !r_0 & r_1 & r_m) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m))
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(!g_0 & !g_1 & r_0 & r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(!g_0 & !g_1 & r_0 & r_1 & !r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(!g_0 & !g_1 & r_0 & r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & XX(!g_0 & !g_1 & !r_0 & r_1 & !r_m) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m))
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(!g_0 & !g_1 & r_0 & r_1 & !r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & XX(!g_0 & !g_1 & !r_0 & r_1 & r_m) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m))
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(!g_0 & !g_1 & r_0 & r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & r_0 & r_m)) & X(!g_0 & !g_1 & !g_m & !r_0 & !r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)) & X(!g_0 & !g_1 & !g_m & r_0 & !r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & !g_m & !r_0 & !r_1 & r_m)) & XX(!g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & !g_m & !r_0 & !r_1 & r_m)) & XX(!g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)) & X(!g_0 & !g_1 & !g_m & r_0 & !r_1)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & !g_m & !r_0 & !r_1 & r_m)) & XX(!g_0 & !g_1 & !g_m & r_0 & r_1)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & XX(!g_0 & !g_1 & !g_m & !r_0 & r_1) & X((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & !g_m & !r_0 & !r_1 & r_m))
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & !g_m & !r_0 & !r_1 & r_m)) & XX(!g_0 & !g_1 & !g_m & r_0 & r_1)
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & !g_1 & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & !g_1 & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & !g_1 & r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & !g_1 & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & !g_1 & r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & !g_1 & !r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & !g_1 & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & !g_1 & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & r_0 & r_m)) & X(!g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & r_0 & r_m)) & X(!g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & r_0 & r_m)) & X(!g_0 & !g_1 & !g_m & r_0 & r_1)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & r_0 & r_m)) & X(!g_0 & !g_1 & !g_m & r_0 & r_1)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & r_0 & r_m)) & X(!g_0 & !g_1 & !g_m & !r_0 & r_1)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & g_1 & !g_m & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(!g_0 & g_1 & !g_m & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & g_1 & !g_m & r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & g_1 & !g_m & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(g_0 & !g_1 & !g_m & r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(g_0 & !g_1 & !g_m & !r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X(g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(g_0 & !g_1 & !g_m & !r_0 & r_1 & !r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(g_0 & !g_1 & !g_m & r_0 & r_1 & !r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+the potential BC: ((!g_0 & !g_1 & r_0 & !r_1 & !r_m) | (!g_0 & g_1 & !g_m & r_0 & !r_m)) & X((!g_0 & !g_1 & !r_0 & !r_1 & !r_m) | (!g_0 & !g_m & !r_0 & !r_1 & !r_m)) & XX(g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X((!g_0 & !g_1 & !r_0 & r_1 & r_m) | (!g_1 & !g_m & !r_0 & r_1 & r_m))
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X((!g_0 & !g_1 & !r_0 & r_1 & !r_m) | (!g_1 & !g_m & !r_0 & r_1 & !r_m))
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X((!g_0 & !g_1 & !r_0 & r_1 & r_m) | (!g_1 & !g_m & !r_0 & r_1 & r_m))
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+the potential BC: ((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)) & X(!g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & r_m & X(!g_0 & !g_1 & !g_m & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & r_m & X(!g_0 & !g_1 & !g_m & !r_0 & r_1)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+the potential BC: ((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)) & X(!g_0 & !g_1 & !g_m & !r_0 & r_1)
+the potential BC: ((!g_0 & !g_1 & !r_0 & !r_1 & r_m) | (!g_0 & g_1 & !g_m & !r_0 & r_m) | (!g_1 & !g_m & !r_0 & !r_1 & r_m)) & X(!g_0 & !g_1 & !g_m & !r_0 & !r_1 & r_m)
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(g_0 & !g_1 & !g_m & r_0 & r_1 & !r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(g_0 & !g_1 & !g_m & r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+*** the confirmed BC: 
+ - g_0 & !g_1 & !g_m & r_0 & !r_1 & !r_m & X(!g_0 & g_1 & !g_m & !r_0 & r_1 & r_m)
+between the goals: 
+goal: G(!g_0 | !g_1)
+goal: G(!r_0 | X(!r_1 | X(g_0 & g_1)))
+
+bc solving time: 3.2675979137420654

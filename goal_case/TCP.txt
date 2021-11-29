@@ -1,0 +1,22 @@
+CASE:tcp#14
+DOM:[]
+GOALS:[[] (delivered -> (!send U ack)), [](send -> (!ack U delivered))]
+BC:
+( F(( G(( ( ( send ) & ( !(( ack )) ) ) & ( send ) )) )) )
+( G(( ( ( send ) & ( !(( ack )) ) ) & ( send ) )) )
+( X(( X(( G(( X(( ( !(( ack )) ) U ( ( send ) & ( !(( ack )) ) ) )) )) )) )) )
+( X(( X(( G(( X(( ( !(( ack )) ) & ( ( send ) & ( !(( ack )) ) ) )) )) )) )) )
+( F(( X(( ( ( delivered ) & ( ( send ) & ( !(( ack )) ) ) ) | ( G(( ( !(( delivered )) ) & ( ( send ) & ( !(( ack )) ) ) )) ) )) )) )
+( X(( ( ( delivered ) & ( ( send ) & ( !(( ack )) ) ) ) | ( G(( ( !(( delivered )) ) & ( ( send ) & ( !(( ack )) ) ) )) ) )) )
+( ( ( delivered ) & ( ( send ) & ( !(( ack )) ) ) ) | ( G(( ( !(( delivered )) ) & ( ( send ) & ( !(( ack )) ) ) )) ) )
+( G(( ( !(( ack )) ) U ( ( send ) & ( !(( ack )) ) ) )) )
+( F(( G(( ( send ) & ( !(!( !(( ack )) ) U !( !(( ack )) )) ) )) )) )
+( G(( ( F(( !(!( send ) U !( send )) )) ) & ( !(( ack )) ) )) )
+( (( G(( G(( ( send ) & ( !(( delivered )) ) )) )) ) U ( G(( ( !(!( !(( ack )) ) U !( !(( ack )) )) ) & ( delivered ) )) )) | G(( G(( G(( ( send ) & ( !(( delivered )) ) )) )) )) )
+( F(( G(( ( !(!( !(( ack )) ) U !( !(( ack )) )) ) & ( send ) )) )) )
+( X(( G(( ( !(!( !(( ack )) ) U !( !(( ack )) )) ) & ( send ) )) )) )
+( ( send ) & ( G(( ( !(( ack )) ) | ( ( !(!( delivered ) U !( delivered )) ) & ( !(( ack )) ) ) )) ) )
+( G(( ( !(( ack )) ) U ( ( send ) & ( !(( ack )) ) ) )) )
+( ( G(( ( !(!( !(( delivered )) ) U !( !(( delivered )) )) ) & ( send ) )) ) | ( G(( ( ( !(( ack )) ) | ( FALSE ) ) & ( delivered ) )) ) )
+( F(( G(( ( !(!( !(( ack )) ) U !( !(( ack )) )) ) & ( send ) )) )) )
+( G(( ( !(!( !(( ack )) ) U !( !(( ack )) )) ) & ( send ) )) )

@@ -1,0 +1,16 @@
+case name: roundrobin#11
+solved bc num: 6
+bc solving time: 0.038533687591552734
+ - (g_0 & (g_1 | (r_0 & Xr_1 & XX(!g_0 | !g_1)))) | !(G(r_0 -> Fg_0) & G(r_1 -> Fg_1))
+ - X(g_0 & (g_1 | (r_0 & Xr_1 & XX(!g_0 | !g_1)))) | !(G(r_0 -> Fg_0) & G(r_1 -> Fg_1))
+ - (r_0 & G!g_0) | !(G(!g_0 | (!g_1 & ((r_0 & Xr_1) -> XX(g_0 & g_1)))) & G(r_1 -> Fg_1))
+ - X(r_0 & G!g_0) | !(G(!g_0 | (!g_1 & ((r_0 & Xr_1) -> XX(g_0 & g_1)))) & G(r_1 -> Fg_1))
+ - (r_1 & G!g_1) | !(G(!g_0 | (!g_1 & ((r_0 & Xr_1) -> XX(g_0 & g_1)))) & G(r_0 -> Fg_0))
+ - X(r_1 & G!g_1) | !(G(!g_0 | (!g_1 & ((r_0 & Xr_1) -> XX(g_0 & g_1)))) & G(r_0 -> Fg_0))
+
+contrastive bc num: 3
+bc evaluation time: 1.197666883468628
+ - (g_0 & (g_1 | (r_0 & Xr_1 & XX(!g_0 | !g_1)))) | !(G(r_0 -> Fg_0) & G(r_1 -> Fg_1))
+ - (r_0 & G!g_0) | !(G(!g_0 | (!g_1 & ((r_0 & Xr_1) -> XX(g_0 & g_1)))) & G(r_1 -> Fg_1))
+ - (r_1 & G!g_1) | !(G(!g_0 | (!g_1 & ((r_0 & Xr_1) -> XX(g_0 & g_1)))) & G(r_0 -> Fg_0))
+cover rate: 1.0

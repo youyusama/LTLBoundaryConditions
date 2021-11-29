@@ -3,3 +3,4 @@ cnf.dimacs
 __pycache__/
 test_case.txt
 __pycache__/aalta.cpython-38.pyc
+conflict-detection-by-learning/

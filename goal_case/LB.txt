@@ -1,0 +1,10 @@
+CASE:loadbalancer#6
+DOM:[[] (<> idle), [] (X (! grant_0) || X ((! request_0 && ! idle) U (! request_0 && idle)))]
+GOALS:[[](X grant_1 -> request_1), ! <> ([] (request_0 && X (! grant_0))), ! <> ([] (request_1 && X (! grant_1))), [] (X (! grant_0 && true || (true && (! grant_1)))), [](request_0 && X request_1 -> X (X (grant_0 && grant_1))), [](! idle -> X (! grant_0 && ! grant_1)), [](request_0 -> grant_1), [](X grant_0 -> request_0)]
+BC:
+( (( request0 ) U ( X(( (( F(( grant0 )) ) U ( ( request0 ) & ( X(( request1 )) ) )) | G(( F(( grant0 )) )) )) )) | G(( request0 )) )
+( G(( X(( F(( ( X(( X(( ( grant0 ) | ( idle ) )) )) ) & ( ( request0 ) & ( X(( TRUE )) ) ) )) )) )) )
+( G(( X(( F(( ( (( X(( ( grant0 ) | ( FALSE ) )) ) U ( request0 )) | G(( X(( ( grant0 ) | ( FALSE ) )) )) ) | ( G(( request0 )) ) )) )) )) )
+( G(( X(( F(( ( request0 ) | ( FALSE ) )) )) )) )
+
+F((grant_1 & idle & request_0 & request_1 ) & X(!grant_1 & idle & !request_0 & request_1))

@@ -1,0 +1,9 @@
+case name: achievepattern#0
+the confirmed BC: 
+ - p & !q & r & !s
+between the goals: 
+goal: G(!r | G!s)
+goal: G(!p | Fq)
+the potential BC: p & !q & !r
+
+bc solving time: 0.010952234268188477

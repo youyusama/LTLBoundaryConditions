@@ -1,0 +1,13 @@
+case name: telephone#15
+solved bc num: 4
+bc solving time: 0.0066068172454833984
+ - (c & (!c R (!d & !f))) | !G(c -> (c U (d | o)))
+ - X(c & (!c R (!d & !f))) | !G(c -> (c U (d | o)))
+ - (c & (!c R (!d & !o))) | !G(c -> (c U (d | f)))
+ - X(c & (!c R (!d & !o))) | !G(c -> (c U (d | f)))
+
+contrastive bc num: 2
+bc evaluation time: 0.11527824401855469
+ - (c & (!c R (!d & !f))) | !G(c -> (c U (d | o)))
+ - (c & (!c R (!d & !o))) | !G(c -> (c U (d | f)))
+cover rate: 1.0

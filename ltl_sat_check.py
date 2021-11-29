@@ -1,5 +1,5 @@
-import subprocess
-AALTA_PATH = '/home/youyu/aalta/aalta'
+# import subprocess
+# AALTA_PATH = '/home/youyu/aalta/aalta'
 # case_file = io.open('unsat.txt', 'w+', encoding='utf-8')
 import sys
 sys.path.append('/usr/local/lib/python3.8/site-packages')
@@ -18,8 +18,8 @@ def sat_check(ltl):
   # p = subprocess.Popen(AALTA_PATH, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
   # p.stdin.write(ltl.encode())
   # p.stdin.close()
-  # # res = p.stdout.read().decode('utf-8').split('\n')
-  # # return True if res[1] == 'sat' else False
+  # res = p.stdout.read().decode('utf-8').split('\n')
+  # return True if res[1] == 'sat' else False
 
   # try:
   #   p.wait(5)

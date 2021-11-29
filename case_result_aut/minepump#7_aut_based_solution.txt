@@ -1,0 +1,18 @@
+case name: minepump#7
+the confirmed BC: 
+ - h & m & !p
+between the goals: 
+goal: G(!h | Xp)
+goal: G(!m | X!p)
+the confirmed BC: 
+ - h & m & p
+between the goals: 
+goal: G(!h | Xp)
+goal: G(!m | X!p)
+the confirmed BC: 
+ - !h & !m & p & X(h & m & p)
+between the goals: 
+goal: G(!h | Xp)
+goal: G(!m | X!p)
+
+bc solving time: 0.013103723526000977
