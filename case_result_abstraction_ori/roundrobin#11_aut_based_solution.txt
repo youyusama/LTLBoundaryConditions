@@ -1,0 +1,6 @@
+case name: roundrobin#11
+allowed conflicts: r_0 g_0 r_1 g_1
+
+BC solving time: 0.43795204162597656
+BC NUM: 0
+BC word NUM: 0

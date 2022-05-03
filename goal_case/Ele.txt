@@ -1,6 +1,7 @@
 CASE:elevator#3
 DOM:[]
 GOALS:[[] ( X(open) -> atfloor), [](call -> <>(open))]
+ALLOWED CONFLICT ATOMS: open , atfloor
 BC:
 ( X(( ( call ) & ( G(( !(( open )) )) ) )) )
 ( G(( ( call ) & ( X(( !(( open )) )) ) )) )

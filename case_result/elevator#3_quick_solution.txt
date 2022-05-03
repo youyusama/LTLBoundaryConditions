@@ -1,0 +1,13 @@
+case name: elevator#3
+solved bc num: 4
+bc solving time: 0.005131244659423828
+ - (!atfloor & Xopen) | !G(call -> Fopen)
+ - X(!atfloor & Xopen) | !G(call -> Fopen)
+ - (call & G!open) | !G(Xopen -> atfloor)
+ - X(call & G!open) | !G(Xopen -> atfloor)
+
+contrastive bc num: 2
+all cost time: 0.054071664810180664
+ - (!atfloor & Xopen) | !G(call -> Fopen)
+ - (call & G!open) | !G(Xopen -> atfloor)
+cover rate: 0

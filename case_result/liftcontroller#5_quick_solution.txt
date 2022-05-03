@@ -1,0 +1,7 @@
+case name: liftcontroller#5
+solved bc num: 0
+bc solving time: 0.38524723052978516
+
+contrastive bc num: 0
+all cost time: 0.38524961471557617
+cover rate: 0

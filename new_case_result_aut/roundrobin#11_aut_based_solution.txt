@@ -1,0 +1,3 @@
+case name: roundrobin#11
+
+bc solving time: 0.01068568229675293

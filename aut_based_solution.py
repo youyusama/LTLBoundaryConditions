@@ -31,9 +31,13 @@ def custom_product(negG_aut, g_aut):
     lsrc, rsrc, osrc = todo.pop()
     if negG_aut.state_is_accepting(lsrc):
       for lt in negG_aut.out(lsrc):
-        for rt in g_aut.out(rsrc):
-          result.new_edge(osrc, osrc, lt.cond, [0])
+        if lt.cond == buddy.bddtrue:
+          result.new_edge(osrc, osrc, buddy.bddtrue, [0])
       continue
+      # for lt in negG_aut.out(lsrc):
+      #   for rt in g_aut.out(rsrc):
+      #     result.new_edge(osrc, osrc, lt.cond, [0])
+      # continue
     for lt in negG_aut.out(lsrc):
       for rt in g_aut.out(rsrc):
         cond = lt.cond & rt.cond
@@ -42,16 +46,20 @@ def custom_product(negG_aut, g_aut):
 
   result.merge_states()
   result.merge_edges()
-  result.purge_dead_states()
+  # result.purge_dead_states()
   return result
 
+def can_be_wittern_without_or(bdd_1, bdd_2):
+  if buddy.bdd_pathcount(bdd_1 | bdd_2) == 1:
+    return True
+  else:
+    return False
 
-def filter_ngd(ngd_aut, goals):
+def iter_rp(ng_aut, goals):
   for goal in goals:
-    # print('---')
     goal_aut = spot.translate(goal, 'ba', 'det')
-    ngd_aut = custom_product(ngd_aut, goal_aut)
-  return ngd_aut
+    ng_aut = custom_product(ng_aut, goal_aut)
+  return ng_aut
 
 
 def get_pbcs_from_aut(aut):
@@ -60,7 +68,6 @@ def get_pbcs_from_aut(aut):
   for s in range(0, aut.num_states()):
     if aut.state_is_accepting(s):
       acc.append(s)
-
   for acc_i in acc:
     aut_temp = spot.automaton(aut.to_str('hoa', '1.1'))
     for acc_j in acc:
@@ -82,7 +89,7 @@ def get_pbcs_from_aut(aut):
   return pbcs
 
 
-RESULT_PATH = 'case_result_aut/'
+RESULT_PATH = 'new_case_result_aut/'
 
 
 def get_bc_by_aut(gc):
@@ -90,12 +97,18 @@ def get_bc_by_aut(gc):
   output_file.write('case name: ' + gc.name + '\n')
   start_time = time.time()
 
-  # translate the automata Dom & !G
-  dng_aut = gc.dandng_aut()
+  # translate the automata !G
+  ngd_aut = gc.ngd_aut()
+  
+  gc.showdg()
+
   # calculate the automata phi by the reachability production
-  aut_phi = filter_ngd(dng_aut, gc.goals)
-  # show graph
+  aut_phi = iter_rp(ngd_aut, gc.doms)
+  
+  aut_phi = iter_rp(aut_phi, gc.goals)
   aut_phi.save('output.dot', format='dot')
+  # show graph
+  
   # get bcs from automata phi
   pbcs = get_pbcs_from_aut(aut_phi)
 
@@ -106,7 +119,7 @@ def get_bc_by_aut(gc):
 
     while isBC_result != -1 and isBC_result != -2:
       no_relation_gi.append(isBC_result)
-      print(no_relation_gi)
+      # print(no_relation_gi)
       isBC_result = gc.isBC_t(pbc, no_relation_gi)
 
     if isBC_result == -1:

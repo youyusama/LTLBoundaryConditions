@@ -1,0 +1,103 @@
+case name: telephone#15
+allowed conflicts: o f d
+
+======================================================================
+
+BC exists between goals: F(c & o) & G((!c | !f) & (!f | !o) & (!c | (c U (d | f))) & (!c | (c U (d | o)))) --x-- F(c & (!c R (!d & !o))) & G((!c | !f) & (!f | !o) & (!c | !o) & (!c | (c U (d | f))))
+
+ - c & !d & !f & X(!c & !d & f & !o) & XXG((!c & !o) | (!c & !f) | (d & !f & !o))
+ Conflict Message:
+Prefix:
+  0
+  |  c & !d & !f
+  5
+  |  !c & !d & f & !o	{0}
+Cycle:
+  7
+  |  (!c & !o) | (!c & !f) | (d & !f & !o)	{0,1}
+from 0 to 5 has conflict: o
+
+ - c & !d & !f & !o & X(c & !d & !f) & XX(!c & !d & f & !o) & XXXG((!c & !o) | (!c & !f) | (d & !f & !o))
+ Conflict Message:
+Prefix:
+  0
+  |  c & !d & !f & !o
+  4
+  |  c & !d & !f
+  5
+  |  !c & !d & f & !o	{0}
+Cycle:
+  7
+  |  (!c & !o) | (!c & !f) | (d & !f & !o)	{0,1}
+from 4 to 5 has conflict: o
+
+
+======================================================================
+
+BC exists between goals: F(c & f) & G((!f | !o) & (!c | !o) & (!c | (c U (d | f))) & (!c | (c U (d | o)))) --x-- F(c & (!c R (!d & !f))) & G((!c | !f) & (!f | !o) & (!c | !o) & (!c | (c U (d | o))))
+
+ - c & !d & !o & XXG((!c & !o) | (!c & !f) | (d & !f & !o)) & X(!c & !d & !f & o)
+ Conflict Message:
+Prefix:
+  0
+  |  c & !d & !o
+  5
+  |  !c & !d & !f & o	{0}
+Cycle:
+  7
+  |  (!c & !o) | (!c & !f) | (d & !f & !o)	{0,1}
+from 0 to 5 has conflict: f
+
+ - c & !d & !f & !o & XXXG((!c & !o) | (!c & !f) | (d & !f & !o)) & X(c & !d & !o) & XX(!c & !d & !f & o)
+ Conflict Message:
+Prefix:
+  0
+  |  c & !d & !f & !o
+  4
+  |  c & !d & !o
+  5
+  |  !c & !d & !f & o	{0}
+Cycle:
+  7
+  |  (!c & !o) | (!c & !f) | (d & !f & !o)	{0,1}
+from 4 to 5 has conflict: f
+
+
+======================================================================
+
+BC exists between goals: F(f & o) & G((!c | !f) & (!c | !o) & (!c | (c U (d | f))) & (!c | (c U (d | o)))) --x-- F(c & (!c R (!d & !f))) & G((!c | !f) & (!f | !o) & (!c | !o) & (!c | (c U (d | o))))
+
+ - c & !d & !f & !o & XXG((!c & !o) | (!c & !f) | (d & !f & !o)) & X(!c & !d & o)
+ Conflict Message:
+Prefix:
+  0
+  |  c & !d & !f & !o
+  4
+  |  !c & !d & o
+Cycle:
+  6
+  |  (!c & !o) | (!c & !f) | (d & !f & !o)	{0,1}
+from 4 to 6 has conflict: f
+
+
+======================================================================
+
+BC exists between goals: F(f & o) & G((!c | !f) & (!c | !o) & (!c | (c U (d | f))) & (!c | (c U (d | o)))) --x-- F(c & (!c R (!d & !o))) & G((!c | !f) & (!f | !o) & (!c | !o) & (!c | (c U (d | f))))
+
+ - c & !d & !f & !o & XXG((!c & !o) | (!c & !f) | (d & !f & !o)) & X(!c & !d & f)
+ Conflict Message:
+Prefix:
+  0
+  |  c & !d & !f & !o
+  4
+  |  !c & !d & f
+Cycle:
+  6
+  |  (!c & !o) | (!c & !f) | (d & !f & !o)	{0,1}
+from 4 to 6 has conflict: o
+
+
+BC solving time: 0.18663334846496582
+BC NUM: 6
+BC contrasty NUM: 6
+BC word NUM: 0

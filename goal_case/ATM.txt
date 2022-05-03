@@ -1,6 +1,7 @@
 CASE:atm#2
 DOM:[[](l -> <>(! l))]
 GOALS:[[]((! p) -> ((! m) && X(l))), []((p && ! l) -> m)]
+ALLOWED CONFLICT ATOMS:  l , m
 BC:
 ( (( G(( ( !(( p )) ) | ( ( m ) & ( X(( FALSE )) ) ) )) ) U ( ( !(( m )) ) & ( ( p ) & ( !(( l )) ) ) )) | G(( G(( ( !(( p )) ) | ( ( m ) & ( X(( FALSE )) ) ) )) )) )
 ( F(( G(( ( !(( m )) ) & ( !(( l )) ) )) )) )

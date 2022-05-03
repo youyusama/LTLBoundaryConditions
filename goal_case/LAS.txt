@@ -1,3 +1,4 @@
 CASE:las#4
 DOM:[]
 GOALS:[[](a -> m), []((c && (! n)) -> (! d)), []((! n) -> (! i)), []((c && m && n) -> d), []((! h) -> (! n))]
+ALLOWED CONFLICT ATOMS: m, d, i

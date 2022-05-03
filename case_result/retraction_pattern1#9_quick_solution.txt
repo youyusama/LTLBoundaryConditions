@@ -1,0 +1,13 @@
+case name: retraction_pattern1#9
+solved bc num: 4
+bc solving time: 0.00323486328125
+ - (p & G!q) | !G(q -> p)
+ - X(p & G!q) | !G(q -> p)
+ - (!p & q) | !G(p -> Fq)
+ - X(!p & q) | !G(p -> Fq)
+
+contrastive bc num: 2
+all cost time: 0.0298769474029541
+ - (p & G!q) | !G(q -> p)
+ - (!p & q) | !G(p -> Fq)
+cover rate: 0.4666666666666667

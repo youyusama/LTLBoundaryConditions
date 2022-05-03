@@ -15,7 +15,7 @@ With the default configuration, `AAP` will be the case, and by the automate-base
 
 See more configuration:
 ```
-postman.py -h
+BC_solver.py -h
 ```
 
 ## Data

@@ -1,0 +1,85 @@
+case name: loadbalancer#6
+allowed conflicts: idle grant_0 grant_1
+
+======================================================================
+
+BC exists between goals: F(!request_1 & Xgrant_1) & XG((!grant_0 | !grant_1) & Fidle & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))) & F(grant_0 | !request_0) & F(grant_1 | !request_1)) & G((grant_1 | !request_0) & (idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1)))) --x-- XG((!grant_0 | !grant_1) & Fidle & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))) & F(grant_0 | !request_0) & F(grant_1 | !request_1)) & G((request_1 | X!grant_1) & (idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1)))) & F(!grant_1 & request_0)
+
+ - word: grant_1 & idle & request_0 & !request_1; !grant_0 & !idle & request_0 & !request_1; cycle{!grant_0 & !grant_1 & idle & !request_0 & !request_1; !grant_0 & !grant_1 & !idle & !request_0 & request_1; !grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & grant_1 & !idle & request_0}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: grant_1 & idle & request_0 & !request_1; !grant_0 & idle & request_0 & !request_1; !grant_1 & idle & !request_0 & !request_1; cycle{!grant_0 & !grant_1 & !idle & !request_0 & request_1; !grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & grant_1 & !idle & request_0; !grant_0 & !grant_1 & idle & !request_0 & !request_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: idle & !request_0 & !request_1; !grant_0 & !idle & request_0; cycle{!grant_0 & !grant_1 & idle & !request_0 & !request_1; !grant_0 & !grant_1 & !idle & !request_0 & request_1; !grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & grant_1 & !idle & request_0}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: idle & !request_0 & !request_1; !grant_0 & idle & request_0 & !request_1; !grant_1 & idle & !request_0 & !request_1; cycle{!grant_0 & !grant_1 & !idle & !request_0 & request_1; !grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & grant_1 & !idle & request_0; !grant_0 & !grant_1 & idle & !request_0 & !request_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: idle & !request_0 & !request_1; !grant_0 & idle & request_0 & request_1; !grant_0 & grant_1 & !idle & request_0 & !request_1; cycle{!grant_0 & !grant_1 & idle & !request_0 & !request_1; !grant_0 & !grant_1 & !idle & !request_0 & request_1; !grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & grant_1 & !idle & request_0}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+======================================================================
+
+BC exists between goals: G((grant_1 | !request_0) & (request_1 | X!grant_1) & (idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1)))) & X(G(Fidle & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))) & F(grant_0 | !request_0) & F(grant_1 | !request_1)) & F(grant_0 & grant_1)) --x-- XG((!grant_0 | !grant_1) & Fidle & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))) & F(grant_0 | !request_0) & F(grant_1 | !request_1)) & F(request_0 & X(request_1 & X(!grant_0 | !grant_1))) & G((grant_1 | !request_0) & (request_1 | X!grant_1) & (idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0))
+
+ - grant_1 & idle & request_0 & request_1 & X(!grant_0 & grant_1 & idle & request_0 & request_1) & XX((grant_1 & idle & !request_0 & !request_1) | (grant_0 & idle & !request_0 & !request_1)) & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  grant_1 & idle & request_0 & request_1
+  14
+  |  !grant_0 & grant_1 & idle & request_0 & request_1
+  17
+  |  (grant_1 & idle & !request_0 & !request_1) | (grant_0 & idle & !request_0 & !request_1)	{0,1}
+Cycle:
+  18
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 17 to 18 has conflict: grant_1, grant_0
+
+ - grant_1 & idle & request_0 & request_1 & X(!grant_0 & grant_1 & idle & request_0 & request_1) & XX((grant_1 & !idle & !request_0 & !request_1) | (grant_0 & !idle & !request_0 & !request_1)) & XXX(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & XXXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  grant_1 & idle & request_0 & request_1
+  14
+  |  !grant_0 & grant_1 & idle & request_0 & request_1
+  17
+  |  (grant_1 & !idle & !request_0 & !request_1) | (grant_0 & !idle & !request_0 & !request_1)
+  19
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+Cycle:
+  18
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 17 to 19 has conflict: grant_1, grant_0
+
+
+======================================================================
+
+BC exists between goals: XG((!grant_0 | !grant_1) & Fidle & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))) & F(grant_0 | !request_0) & F(grant_1 | !request_1)) & F(!idle & X(grant_0 | grant_1)) & G((grant_1 | !request_0) & (request_1 | X!grant_1) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1)))) --x-- XG((!grant_0 | !grant_1) & Fidle & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))) & F(grant_0 | !request_0) & F(grant_1 | !request_1)) & G((request_1 | X!grant_1) & (idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1)))) & F(!grant_1 & request_0)
+
+ - word: grant_1 & !idle & request_0 & request_1; !grant_0 & !idle & request_0 & !request_1; !grant_0 & !grant_1 & !idle & !request_0 & !request_1; cycle{!grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & !idle & !request_0 & !request_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: grant_1 & !idle & request_0 & request_1; !grant_0 & idle & request_0 & !request_1; !grant_0 & !grant_1 & !idle & !request_0 & !request_1; cycle{!grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & !idle & !request_0 & !request_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !idle & !request_0 & request_1; !grant_0 & !idle & request_0 & !request_1; !grant_0 & !grant_1 & !idle & !request_0 & !request_1; cycle{!grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & !idle & !request_0 & !request_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !idle & !request_0 & request_1; !grant_0 & idle & request_0 & !request_1; !grant_0 & !grant_1 & !idle & !request_0 & !request_1; cycle{!grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & !idle & !request_0 & !request_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !idle & !request_0 & request_1; !grant_0 & !idle & request_0 & request_1; !grant_0 & !grant_1 & !idle & !request_0 & !request_1; cycle{!grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & !idle & !request_0 & !request_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !idle & !request_0 & request_1; !grant_0 & idle & request_0 & request_1; !grant_0 & !idle & !request_0 & !request_1; cycle{!grant_0 & !grant_1 & idle & !request_0 & request_1; !grant_0 & !idle & !request_0 & !request_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+BC solving time: 0.9888303279876709
+BC NUM: 2
+BC contrasty NUM: 2
+BC word NUM: 11

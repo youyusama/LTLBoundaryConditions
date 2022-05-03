@@ -1,0 +1,21 @@
+case name: prioritized_arbiter#8
+solved bc num: 12
+bc solving time: 0.10384058952331543
+ - (r_m & X((g_0 | g_1) R !g_m)) | !(G(!g_0 | !g_1) & G!(g_0 & g_m) & G!(g_1 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - X(r_m & X((g_0 | g_1) R !g_m)) | !(G(!g_0 | !g_1) & G!(g_0 & g_m) & G!(g_1 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - (g_0 & g_1) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G!(g_0 & g_m) & G!(g_1 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - X(g_0 & g_1) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G!(g_0 & g_m) & G!(g_1 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - (g_0 & g_m) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_1 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - X(g_0 & g_m) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_1 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - (g_1 & g_m) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_0 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - X(g_1 & g_m) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_0 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - (1 U (r_0 & G!g_0)) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_0 & g_m) & G!(g_1 & g_m) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - (1 U (r_1 & G!g_1)) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_0 & g_m) & G!(g_1 & g_m) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - (r_0 & Xr_1 & XX(!g_0 | !g_1)) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_0 & g_m) & G!(g_1 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1))
+ - X(r_0 & Xr_1 & XX(!g_0 | !g_1)) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_0 & g_m) & G!(g_1 & g_m) & G(r_0 -> Fg_0) & G(r_1 -> Fg_1))
+
+contrastive bc num: 2
+all cost time: 3.966803550720215
+ - (1 U (r_0 & G!g_0)) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_0 & g_m) & G!(g_1 & g_m) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+ - (1 U (r_1 & G!g_1)) | !(G(r_m -> X((!g_0 & !g_1) U g_m)) & G(!g_0 | !g_1) & G!(g_0 & g_m) & G!(g_1 & g_m) & G((r_0 & Xr_1) -> XX(g_0 & g_1)))
+cover rate: 0

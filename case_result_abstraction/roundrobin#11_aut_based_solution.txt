@@ -1,0 +1,153 @@
+case name: roundrobin#11
+allowed conflicts: r_0 g_0 r_1 g_1
+
+======================================================================
+
+BC exists between goals: F(!g_0 & r_0 & X!r_0) & G((!r_0 | Fg_0) & (!r_1 | Fg_1) & (!g_0 | (!g_1 & (!r_0 | X(!r_1 | X(g_0 & g_1))))) & F(!g_1 | !r_1) & F(!g_0 | !r_0) & (!g_0 | r_0 | X!r_0) & (!g_1 | r_1 | X!r_1) & (g_1 | !r_1 | Xr_1)) --x-- F(g_0 & (g_1 | (r_0 & X(r_1 & X(!g_0 | !g_1))))) & G((!r_0 | Fg_0) & (!r_1 | Fg_1) & F(!g_1 | !r_1) & F(!g_0 | !r_0) & (!g_0 | r_0 | X!r_0) & (!g_1 | r_1 | X!r_1) & (g_1 | !r_1 | Xr_1) & (g_0 | !r_0 | Xr_0))
+
+ - word: g_1 & r_0 & r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_1 & r_0 & !r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_1 & r_0 & r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_1 & r_0 & !r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & g_1 & r_0 & !r_1; g_0 & !g_1 & !r_1; g_0 & !g_1 & !r_0 & r_1; g_0 & !g_1 & !r_0 & r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & r_0 & r_1; g_0 & !g_1 & r_1; g_0 & !g_1 & !r_0 & r_1; g_0 & !g_1 & !r_0 & r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: (!g_0 & !g_1 & r_0 & !r_1) | (!g_0 & g_1 & r_0 & r_1); g_0 & !g_1 & !r_1; g_0 & !g_1 & !r_0 & r_1; g_0 & !g_1 & !r_0 & r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: (!g_0 & !g_1 & r_0 & !r_1) | (!g_0 & g_1 & r_0 & r_1); g_0 & !g_1 & r_1; g_0 & !g_1 & !r_0 & r_1; g_0 & !g_1 & !r_0 & r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & g_1 & r_0 & !r_1; !g_1 & r_0 & !r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & g_1 & r_0 & !r_1; g_1 & r_0 & !r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & g_1 & !r_0 & !r_1; !g_1 & r_0 & !r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & g_1 & !r_0 & !r_1; g_1 & r_0 & !r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & !r_1; !g_1 & r_0 & !r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & !r_1; g_1 & r_0 & !r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & r_0 & r_1; g_1 & r_0 & r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & r_0 & r_1; !g_1 & r_0 & r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & !r_0 & r_1; g_1 & r_0 & r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & !r_0 & r_1; !g_1 & r_0 & r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: (!g_0 & !g_1 & r_0 & !r_1) | (!g_0 & g_1 & r_0 & r_1); g_1 & r_0 & r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: (!g_0 & !g_1 & r_0 & !r_1) | (!g_0 & g_1 & r_0 & r_1); !g_1 & r_0 & !r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: (!g_0 & !g_1 & r_0 & !r_1) | (!g_0 & g_1 & r_0 & r_1); !g_1 & r_0 & r_1; !g_0 & g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: (!g_0 & !g_1 & r_0 & !r_1) | (!g_0 & g_1 & r_0 & r_1); g_1 & r_0 & !r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+======================================================================
+
+BC exists between goals: F(g_0 & !r_0 & Xr_0) & G((!r_0 | Fg_0) & (!r_1 | Fg_1) & (!g_0 | (!g_1 & (!r_0 | X(!r_1 | X(g_0 & g_1))))) & F(!g_1 | !r_1) & F(!g_0 | !r_0) & (!g_1 | r_1 | X!r_1) & (g_1 | !r_1 | Xr_1) & (g_0 | !r_0 | Xr_0)) --x-- F(g_0 & (g_1 | (r_0 & X(r_1 & X(!g_0 | !g_1))))) & G((!r_0 | Fg_0) & (!r_1 | Fg_1) & F(!g_1 | !r_1) & F(!g_0 | !r_0) & (!g_0 | r_0 | X!r_0) & (!g_1 | r_1 | X!r_1) & (g_1 | !r_1 | Xr_1) & (g_0 | !r_0 | Xr_0))
+
+ - word: g_0 & !g_1 & !r_1; !g_0 & g_1 & r_0 & r_1; g_0 & !g_1 & r_0 & !r_1; cycle{!g_0 & !g_1 & r_0 & !r_1; g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_1; !g_0 & !g_1 & r_0 & r_1; !g_0 & !g_1 & r_0 & r_1; !g_0 & g_1 & r_0 & r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & g_1 & !r_0 & !r_1; g_0 & !g_1 & !r_1; !g_0 & g_1 & r_0 & r_1; g_0 & !g_1 & r_0 & !r_1; cycle{!g_0 & !g_1 & r_0 & !r_1; g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & !r_1; g_0 & !g_1 & !r_1; !g_0 & g_1 & r_0 & r_1; g_0 & !g_1 & r_0 & !r_1; cycle{!g_0 & !g_1 & r_0 & !r_1; g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & !r_0 & r_1; g_0 & !g_1 & r_1; !g_0 & !g_1 & r_0 & r_1; !g_0 & !g_1 & r_0 & r_1; !g_0 & g_1 & r_0 & r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+======================================================================
+
+BC exists between goals: F(g_1 & !r_1 & Xr_1) & G((!r_0 | Fg_0) & (!r_1 | Fg_1) & (!g_0 | (!g_1 & (!r_0 | X(!r_1 | X(g_0 & g_1))))) & F(!g_1 | !r_1) & F(!g_0 | !r_0) & (!g_0 | r_0 | X!r_0) & (g_1 | !r_1 | Xr_1) & (g_0 | !r_0 | Xr_0)) --x-- F(g_0 & (g_1 | (r_0 & X(r_1 & X(!g_0 | !g_1))))) & G((!r_0 | Fg_0) & (!r_1 | Fg_1) & F(!g_1 | !r_1) & F(!g_0 | !r_0) & (!g_0 | r_0 | X!r_0) & (!g_1 | r_1 | X!r_1) & (g_1 | !r_1 | Xr_1) & (g_0 | !r_0 | Xr_0))
+
+ - word: g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & !r_0; !g_0 & !g_1 & r_0 & r_1; !g_0 & g_1 & r_0 & r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0; !g_0 & !g_1 & r_0 & r_1; !g_0 & g_1 & r_0 & r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+======================================================================
+
+BC exists between goals: F(!g_1 & r_1 & X!r_1) & G((!r_0 | Fg_0) & (!r_1 | Fg_1) & (!g_0 | (!g_1 & (!r_0 | X(!r_1 | X(g_0 & g_1))))) & F(!g_1 | !r_1) & F(!g_0 | !r_0) & (!g_0 | r_0 | X!r_0) & (!g_1 | r_1 | X!r_1) & (g_0 | !r_0 | Xr_0)) --x-- F(g_0 & (g_1 | (r_0 & X(r_1 & X(!g_0 | !g_1))))) & G((!r_0 | Fg_0) & (!r_1 | Fg_1) & F(!g_1 | !r_1) & F(!g_0 | !r_0) & (!g_0 | r_0 | X!r_0) & (!g_1 | r_1 | X!r_1) & (g_1 | !r_1 | Xr_1) & (g_0 | !r_0 | Xr_0))
+
+ - word: g_0 & r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !r_0 & r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & !r_0 & r_1; g_0 & !r_0 & r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & !r_0 & !r_1; g_0 & !r_0 & r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & r_0 & r_1; g_0 & r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: (!g_0 & !g_1 & r_0 & !r_1) | (!g_0 & g_1 & r_0 & r_1); g_0 & r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & r_1; !g_0 & !g_1 & !r_0; !g_0 & !g_1 & r_0 & r_1; !g_0 & g_1 & r_0 & r_1; g_0 & !g_1 & r_0 & !r_1; cycle{!g_0 & g_1 & r_0 & !r_1; g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & r_1; !g_0 & g_1 & !r_0; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & r_1; !g_0 & !g_1 & r_0; !g_0 & !g_1 & r_0 & r_1; !g_0 & g_1 & r_0 & r_1; g_0 & !g_1 & r_0 & !r_1; cycle{!g_0 & g_1 & r_0 & !r_1; g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & r_1; !g_0 & g_1 & r_0; g_0 & !g_1 & r_0 & !r_1; cycle{!g_0 & g_1 & r_0 & !r_1; g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: g_0 & !g_1 & r_0 & r_1; g_0 & !g_1 & !r_0; !g_0 & !g_1 & !r_0 & r_1; !g_0 & !g_1 & !r_0 & r_1; !g_0 & g_1 & r_0 & r_1; g_0 & !g_1 & r_0 & !r_1; cycle{!g_0 & g_1 & r_0 & !r_1; g_0 & !g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & !r_0 & r_1; g_0 & r_0 & r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: !g_0 & !g_1 & !r_0 & r_1; g_0 & !r_0 & r_1; !g_0 & !g_1 & !r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1; cycle{g_0 & !g_1 & r_0 & !r_1; !g_0 & g_1 & r_0 & !r_1}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+BC solving time: 4.5213751792907715
+BC NUM: 0
+BC contrasty NUM: 0
+BC word NUM: 42

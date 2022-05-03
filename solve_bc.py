@@ -6,7 +6,7 @@ import io
 from GORE import GoreCase
 
 gore_cases = []
-CASE_NAME = 'LB'
+CASE_NAME = 'PA'
 CASE_PATH = 'goal_case/'+CASE_NAME+'.txt'
 RESULT_PATH = 'case_result/'
 
@@ -118,7 +118,7 @@ def quickSolutionAll():
     for bc in BCs:
       for gene_bc in gc.gen_t_bc:
         if not gc.isBC(gene_bc):
-          print('fuck')
+          print('bad')
         all_bc += 1
         if gc.isWitness(bc, gene_bc) and not gc.isWitness(gene_bc, bc):
           cover_bc += 1
@@ -143,7 +143,7 @@ def get_by_quick_solution(gc):
   for bc in BCs:
     for gene_bc in gc.gen_t_bc:
       if not gc.isBC(gene_bc):
-        print('fuck')
+        print('bad')
       all_bc += 1
       if gc.isWitness(bc, gene_bc) and not gc.isWitness(gene_bc, bc):
         cover_bc += 1

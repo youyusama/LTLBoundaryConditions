@@ -1,0 +1,12 @@
+case name: achievepattern#0
+solved bc num: 4
+bc solving time: 0.019463777542114258
+ - (r & (1 U s)) | !G(p -> Fq)
+ - X(r & (1 U s)) | !G(p -> Fq)
+ - (p & G!q) | !G(r -> G!s)
+ - X(p & G!q) | !G(r -> G!s)
+
+contrastive bc num: 1
+all cost time: 0.09959721565246582
+ - (p & G!q) | !G(r -> G!s)
+cover rate: 0.875

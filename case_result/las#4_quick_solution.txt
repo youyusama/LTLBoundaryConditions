@@ -1,0 +1,18 @@
+case name: las#4
+solved bc num: 10
+bc solving time: 0.016748666763305664
+ - (a & !m) | !(G((c & !n) -> !d) & G(!n -> !i) & G((c & m & n) -> d) & G(!h -> !n))
+ - X(a & !m) | !(G((c & !n) -> !d) & G(!n -> !i) & G((c & m & n) -> d) & G(!h -> !n))
+ - (c & d & !n) | !(G(a -> m) & G(!n -> !i) & G((c & m & n) -> d) & G(!h -> !n))
+ - X(c & d & !n) | !(G(a -> m) & G(!n -> !i) & G((c & m & n) -> d) & G(!h -> !n))
+ - (i & !n) | !(G(a -> m) & G((c & !n) -> !d) & G((c & m & n) -> d) & G(!h -> !n))
+ - X(i & !n) | !(G(a -> m) & G((c & !n) -> !d) & G((c & m & n) -> d) & G(!h -> !n))
+ - (c & !d & m & n) | !(G(a -> m) & G((c & !n) -> !d) & G(!n -> !i) & G(!h -> !n))
+ - X(c & !d & m & n) | !(G(a -> m) & G((c & !n) -> !d) & G(!n -> !i) & G(!h -> !n))
+ - (!h & n) | !(G(a -> m) & G((c & !n) -> !d) & G(!n -> !i) & G((c & m & n) -> d))
+ - X(!h & n) | !(G(a -> m) & G((c & !n) -> !d) & G(!n -> !i) & G((c & m & n) -> d))
+
+contrastive bc num: 1
+all cost time: 0.52225661277771
+ - (c & d & !n) | !(G(a -> m) & G(!n -> !i) & G((c & m & n) -> d) & G(!h -> !n))
+cover rate: 0

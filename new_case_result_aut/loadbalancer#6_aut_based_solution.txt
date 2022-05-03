@@ -1,0 +1,3 @@
+case name: loadbalancer#6
+
+bc solving time: 0.02272200584411621

@@ -7,11 +7,12 @@ from ltl_sat_check import sat_check
 import time
 
 class GoreCase:
-  def __init__(self, name, doms, goals, bcs):
+  def __init__(self, name, doms, goals, bcs, ac):
     self.name = name
     self.doms = [spot.formula(dom) for dom in doms] if len(doms) > 0 else []
     self.goals = [spot.formula(goal) for goal in goals]
     self.gen_t_bc = [spot.formula(bc) for bc in bcs] if len(bcs) > 0 else []
+    self.allowed_conflict = [al.strip() for al in ac]
 
 
   def showdg(self):
@@ -20,6 +21,9 @@ class GoreCase:
 
   def ngd_aut(self):
     return spot.translate(spot.formula_Not(spot.formula_And(self.goals + self.doms)), 'ba', 'det')
+
+  def ng_aut(self):
+    return spot.translate(spot.formula_Not(spot.formula_And(self.goals)), 'ba', 'det')
 
   def dandng_aut(self):
     return spot.translate(spot.formula_And([spot.formula_Not(spot.formula_And(self.goals))] + self.doms), 'ba', 'det')
@@ -53,7 +57,7 @@ class GoreCase:
   def isBC(self, bc, show_reason = False):
     if type(bc) is str:
       bc = spot.formula(bc)
-    c = spot.language_containment_checker()
+    # c = spot.language_containment_checker()
     #non-triviality
     if not sat_check(bc.to_str('spin')) or not sat_check(spot.formula_Not(bc).to_str('spin')):
       if show_reason:
@@ -78,6 +82,41 @@ class GoreCase:
             print(i, self.goals[i].to_str())
           return False
     return True
+
+  
+  def isBC_2(self, bc, i, j):
+    goals_2 = self.doms + self.goals
+    if type(bc) is str:
+      bc = spot.formula(bc)
+    #non-triviality
+    if not sat_check(bc.to_str('spin')) or not sat_check(spot.formula_Not(bc).to_str('spin')):
+      return False
+    not_g = spot.formula_Not(spot.formula_And([goals_2[i], goals_2[j]]))
+    if not sat_check(spot.formula_And([not_g, spot.formula_Not(bc)]).to_str('spin')) and not sat_check(spot.formula_And([spot.formula_Not(not_g), bc]).to_str('spin')):
+      return False
+    #logical incosistency
+    if sat_check(spot.formula_And(self.doms + self.goals + [bc,]).to_str('spin')):
+      return False
+    #minimality
+    if not sat_check(spot.formula_And([goal for goal in goals_2 if goal != goals_2[i]] + [bc,]).to_str('spin')):
+      return False
+    if not sat_check(spot.formula_And([goal for goal in goals_2 if goal != goals_2[j]] + [bc,]).to_str('spin')):
+      return False
+    return True
+
+
+  def isWitness_2(self, bc1, bc2, i, j):
+    if type(bc1) is str:
+      bc1 = spot.formula(bc1)
+    if type(bc2) is str:
+      bc2 = spot.formula(bc2)
+    # if self.isGeneral(bc1, bc2):
+    #   print('just genral')
+    #   return False
+    if not self.isBC_2(spot.formula_And([bc2, spot.formula_Not(bc1)]), i, j):
+      return True
+    else:
+      return False
 
 
   def isGeneral(self, bc1, bc2):
@@ -143,11 +182,21 @@ class GoreCase:
     return nonsense_bc
         
   
+  def extra_goal_exists(self):
+    for g_i in self.goals:
+      extra = spot.formula_And(self.doms + [g for g in self.goals if g != g_i] + [spot.formula_Not(g_i)])
+      if not sat_check(extra):
+        return True
+    return False
   
 
   def quickSolution(self):
     start_time = time.time()
     BCs = []
+
+    if self.extra_goal_exists():
+      return [], [], time.time()-start_time, time.time()-start_time
+
     for goal_i in self.goals:
       G_minusi = spot.formula_And([g for g in self.goals if g != goal_i])
       
@@ -210,24 +259,34 @@ class GoreCase:
     #   print(self.isBC(bc))
     BCs_real = []
     for bc in BCs:
-      if self.isBC(bc):
-        BCs_real.append(bc)
+      # if self.isBC(bc):
+      BCs_real.append(bc)
 
     BCg = BCs_real.copy()
 
+    # filtering
+    BCs_move = []
     for bc in BCs_real:
-      if not self.isBC(bc):
-        BCs_real.remove(bc)
+      if bc in BCs_move:
+        continue
+      # if not self.isBC(bc):
+      #   BCs_move.append(bc)
+      #   print('\n>>>>>WARRING!<<<<< THAT BC COULD NOT HAPPEN: ' + self.name + '\n')
+      #   continue
       for bc1 in BCs_real:
+        if bc1 in BCs_move:
+          continue
         if bc != bc1:
           a = self.isWitness(bc, bc1)
           b = self.isWitness(bc1, bc)
           if a and b:
             if len(bc.to_str()) < len(bc1.to_str()):
-              BCs_real.remove(bc1)
+              BCs_move.append(bc1)
           if a and not b:
-            BCs_real.remove(bc1)
+            BCs_move.append(bc1)
+    for bc in BCs_move:
+      BCs_real.remove(bc)
     
     # for bc in BCs:
     #   print(bc.to_str())
-    return BCg, BCs_real, gen_time-start_time, time.time()-gen_time
+    return BCg, BCs_real, gen_time-start_time, time.time()-start_time

@@ -1,0 +1,205 @@
+case name: loadbalancer#6
+allowed conflicts: idle grant_0 grant_1
+
+======================================================================
+
+BC exists between goals: F(!request_1 & Xgrant_1) & G((grant_1 | !request_0) & (idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1)))) & XG((!grant_0 | !grant_1) & Fidle & F(grant_0 | !request_0) & F(grant_1 | !request_1)) --x-- F(!grant_1 & request_0) & G((idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1))) & (request_1 | X!grant_1)) & XG((!grant_0 | !grant_1) & Fidle & F(grant_0 | !request_0) & F(grant_1 | !request_1) & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))))
+
+ - grant_1 & idle & request_0 & !request_1 & X(!grant_0 & idle & request_0 & !request_1) & XX(!grant_1 & idle & !request_0 & !request_1) & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  grant_1 & idle & request_0 & !request_1
+  16
+  |  !grant_0 & idle & request_0 & !request_1
+  18
+  |  !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  20
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 16 to 18 has conflict: grant_1
+
+ - grant_1 & idle & request_0 & !request_1 & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & X(!grant_0 & !idle & request_0 & !request_1) & XX(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  grant_1 & idle & request_0 & !request_1
+  16
+  |  !grant_0 & !idle & request_0 & !request_1
+  19
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  20
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 16 to 19 has conflict: grant_1
+
+ - idle & !request_0 & !request_1 & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & X(!grant_0 & idle & request_0 & request_1) & XX((!grant_1 & idle & !request_0 & !request_1) | (!grant_0 & idle & !request_0 & !request_1))
+ Conflict Message:
+Prefix:
+  0
+  |  idle & !request_0 & !request_1
+  5
+  |  !grant_0 & idle & request_0 & request_1
+  28
+  |  (!grant_1 & idle & !request_0 & !request_1) | (!grant_0 & idle & !request_0 & !request_1)
+Cycle:
+  20
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 5 to 28 has conflict: grant_1
+
+ - idle & !request_0 & !request_1 & X(!grant_0 & idle & request_0 & !request_1) & XX(!grant_1 & idle & !request_0 & !request_1) & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  idle & !request_0 & !request_1
+  5
+  |  !grant_0 & idle & request_0 & !request_1
+  18
+  |  !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  20
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 5 to 18 has conflict: grant_1
+
+ - idle & !request_0 & !request_1 & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & XX(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & X(!grant_0 & !idle & request_0)
+ Conflict Message:
+Prefix:
+  0
+  |  idle & !request_0 & !request_1
+  5
+  |  !grant_0 & !idle & request_0
+  19
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  20
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 5 to 19 has conflict: grant_1
+
+
+======================================================================
+
+BC exists between goals: G((grant_1 | !request_0) & (idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1))) & (request_1 | X!grant_1)) & X(F(grant_0 & grant_1) & G(Fidle & F(grant_1 | !request_1) & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))))) --x-- XG((!grant_0 | !grant_1) & Fidle & F(grant_0 | !request_0) & F(grant_1 | !request_1)) & F(request_0 & X(request_1 & X(!grant_0 | !grant_1))) & G((grant_1 | !request_0) & (idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (request_1 | X!grant_1))
+
+ - grant_1 & idle & request_0 & request_1 & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & X(!grant_0 & grant_1 & idle & request_0 & request_1) & XX((grant_0 & idle & !request_0 & !request_1) | (grant_1 & idle & !request_0 & !request_1))
+ Conflict Message:
+Prefix:
+  0
+  |  grant_1 & idle & request_0 & request_1
+  6
+  |  !grant_0 & grant_1 & idle & request_0 & request_1
+  17
+  |  (grant_0 & idle & !request_0 & !request_1) | (grant_1 & idle & !request_0 & !request_1)	{0}
+Cycle:
+  18
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 17 to 18 has conflict: grant_1, grant_0
+
+ - grant_1 & idle & request_0 & request_1 & X(!grant_0 & grant_1 & idle & request_0 & request_1) & XX((grant_0 & !idle & !request_0 & !request_1) | (grant_1 & !idle & !request_0 & !request_1)) & XXX(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & XXXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  grant_1 & idle & request_0 & request_1
+  6
+  |  !grant_0 & grant_1 & idle & request_0 & request_1
+  17
+  |  (grant_0 & !idle & !request_0 & !request_1) | (grant_1 & !idle & !request_0 & !request_1)	{0}
+  19
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  18
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 17 to 19 has conflict: grant_1, grant_0
+
+
+======================================================================
+
+BC exists between goals: F(!idle & X(grant_0 | grant_1)) & G((grant_1 | !request_0) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1))) & (request_1 | X!grant_1)) & XG((!grant_0 | !grant_1) & Fidle & F(grant_1 | !request_1) & (!grant_0 | ((!idle & !request_0) U (idle & !request_0)))) --x-- F(!grant_1 & request_0) & G((idle | X(!grant_0 & !grant_1)) & (request_0 | X!grant_0) & (!request_0 | X(!request_1 | X(grant_0 & grant_1))) & (request_1 | X!grant_1)) & XG((!grant_0 | !grant_1) & Fidle & F(grant_0 | !request_0) & F(grant_1 | !request_1) & (!grant_0 | ((!idle & !request_0) U (idle & !request_0))))
+
+ - grant_1 & !idle & request_0 & request_1 & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & X(!grant_0 & !idle & request_0 & !request_1) & XX(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  grant_1 & !idle & request_0 & request_1
+  11
+  |  !grant_0 & !idle & request_0 & !request_1
+  31
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  51
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 11 to 31 has conflict: grant_1
+
+ - grant_1 & !idle & request_0 & request_1 & X(!grant_0 & idle & request_0 & !request_1) & XX(!grant_1 & idle & !request_0 & !request_1) & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  grant_1 & !idle & request_0 & request_1
+  11
+  |  !grant_0 & idle & request_0 & !request_1
+  49
+  |  !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  51
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 11 to 49 has conflict: grant_1
+
+ - !idle & !request_0 & request_1 & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & X(!grant_0 & idle & request_0 & request_1) & XX((!grant_1 & idle & !request_0 & !request_1) | (!grant_0 & idle & !request_0 & !request_1))
+ Conflict Message:
+Prefix:
+  0
+  |  !idle & !request_0 & request_1
+  4
+  |  !grant_0 & idle & request_0 & request_1
+  64
+  |  (!grant_1 & idle & !request_0 & !request_1) | (!grant_0 & idle & !request_0 & !request_1)
+Cycle:
+  51
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 4 to 64 has conflict: grant_1
+
+ - !idle & !request_0 & request_1 & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & XX(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & X(!grant_0 & !idle & request_0 & request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  !idle & !request_0 & request_1
+  4
+  |  !grant_0 & !idle & request_0 & request_1
+  30
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  51
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 4 to 30 has conflict: grant_1
+
+ - !idle & !request_0 & request_1 & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1) & X(!grant_0 & !idle & request_0 & !request_1) & XX(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  !idle & !request_0 & request_1
+  4
+  |  !grant_0 & !idle & request_0 & !request_1
+  31
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  51
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 4 to 31 has conflict: grant_1
+
+ - !idle & !request_0 & request_1 & X(!grant_0 & idle & request_0 & !request_1) & XX(!grant_1 & idle & !request_0 & !request_1) & XXXG(!grant_0 & !grant_1 & idle & !request_0 & !request_1)
+ Conflict Message:
+Prefix:
+  0
+  |  !idle & !request_0 & request_1
+  4
+  |  !grant_0 & idle & request_0 & !request_1
+  49
+  |  !grant_1 & idle & !request_0 & !request_1
+Cycle:
+  51
+  |  !grant_0 & !grant_1 & idle & !request_0 & !request_1	{0,1}
+from 4 to 49 has conflict: grant_1
+
+
+BC solving time: 1.5557096004486084
+BC NUM: 13
+BC word NUM: 0

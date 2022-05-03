@@ -1,0 +1,3 @@
+case name: tcp#14
+
+bc solving time: 0.003626108169555664

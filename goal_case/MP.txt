@@ -1,6 +1,7 @@
 CASE:minepump#7
 DOM:[[]((p && X(p)) -> X(X(! h)))]
 GOALS:[[](h -> X(p)), [](m -> X(! p))]
+ALLOWED CONFLICT ATOMS: p
 BC:
 ( F(( ( h ) & ( m ) )) )
 ( X(( ( h ) & ( m ) )) )

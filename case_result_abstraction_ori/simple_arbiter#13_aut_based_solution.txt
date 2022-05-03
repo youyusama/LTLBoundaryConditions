@@ -1,0 +1,55 @@
+case name: simple_arbiter#13
+allowed conflicts: r1 r2 g1 g2
+
+======================================================================
+
+BC exists between goals: !g1 & !g2 & !r1 & !r2 & F(((g1 & r1) | (!g1 & !r1)) & (g1 | Xg1) & (!g1 | X!g1)) & G((((!g1 | r1) & (g1 | !r1)) | (!r1 & X!r1) | (r1 & Xr1)) & (((!g2 | r2) & (g2 | !r2)) | (!r2 & X!r2) | (r2 & Xr2)) & (((!g2 | !r2) & (g2 | r2)) | (!g2 & X!g2) | (g2 & Xg2))) & XG((!g1 | !g2) & F((g2 & r2) | (!g2 & !r2)) & F((g1 & r1) | (!g1 & !r1)) & F(!g1 | !r1) & F(!g2 | !r2)) --x-- g1 & !g2 & !r1 & !r2 & G((((!g1 | r1) & (g1 | !r1)) | (!r1 & X!r1) | (r1 & Xr1)) & (((!g2 | r2) & (g2 | !r2)) | (!r2 & X!r2) | (r2 & Xr2)) & (((!g1 | !r1) & (g1 | r1)) | (!g1 & X!g1) | (g1 & Xg1)) & (((!g2 | !r2) & (g2 | r2)) | (!g2 & X!g2) | (g2 & Xg2))) & XG((!g1 | !g2) & F((g2 & r2) | (!g2 & !r2)) & F((g1 & r1) | (!g1 & !r1)) & F(!g1 | !r1) & F(!g2 | !r2))
+
+ - word: !g2 & !r1 & !r2; g1 & !g2 & !r1 & r2; cycle{!g1 & g2 & !r1 & r2; !g1 & g2 & r1 & r2; !g1 & g2 & r1 & !r2; g1 & !g2 & r1 & !r2; g1 & !g2 & !r1 & r2}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+======================================================================
+
+BC exists between goals: !g1 & !g2 & !r1 & !r2 & F(((g1 & r1) | (!g1 & !r1)) & (g1 | Xg1) & (!g1 | X!g1)) & G((((!g1 | r1) & (g1 | !r1)) | (!r1 & X!r1) | (r1 & Xr1)) & (((!g2 | r2) & (g2 | !r2)) | (!r2 & X!r2) | (r2 & Xr2)) & (((!g2 | !r2) & (g2 | r2)) | (!g2 & X!g2) | (g2 & Xg2))) & XG((!g1 | !g2) & F((g2 & r2) | (!g2 & !r2)) & F((g1 & r1) | (!g1 & !r1)) & F(!g1 | !r1) & F(!g2 | !r2)) --x-- !g1 & !g2 & !r1 & !r2 & G((((!g1 | r1) & (g1 | !r1)) | (!r1 & X!r1) | (r1 & Xr1)) & (((!g2 | r2) & (g2 | !r2)) | (!r2 & X!r2) | (r2 & Xr2)) & (((!g1 | !r1) & (g1 | r1)) | (!g1 & X!g1) | (g1 & Xg1)) & (((!g2 | !r2) & (g2 | r2)) | (!g2 & X!g2) | (g2 & Xg2))) & X(F(g1 & g2) & G(F((g2 & r2) | (!g2 & !r2)) & F((g1 & r1) | (!g1 & !r1)) & F(!g1 | !r1) & F(!g2 | !r2)))
+
+ - word: !g1 & !g2 & !r1 & !r2; !g1 & !g2 & r1 & r2; g1 & !g2 & r1 & r2; g2 & !r1 & r2; !g1 & g2 & !r1 & r2; !g1 & g2 & r1 & r2; cycle{!g1 & g2 & r1 & !r2; g1 & !g2 & r1 & !r2; g1 & !g2 & r1 & r2; g1 & !g2 & !r1 & r2; !g1 & g2 & !r1 & r2; !g1 & g2 & r1 & r2}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+======================================================================
+
+BC exists between goals: !g1 & g2 & !r1 & !r2 & G((((!g1 | r1) & (g1 | !r1)) | (!r1 & X!r1) | (r1 & Xr1)) & (((!g2 | r2) & (g2 | !r2)) | (!r2 & X!r2) | (r2 & Xr2)) & (((!g1 | !r1) & (g1 | r1)) | (!g1 & X!g1) | (g1 & Xg1)) & (((!g2 | !r2) & (g2 | r2)) | (!g2 & X!g2) | (g2 & Xg2))) & XG((!g1 | !g2) & F((g2 & r2) | (!g2 & !r2)) & F((g1 & r1) | (!g1 & !r1)) & F(!g1 | !r1) & F(!g2 | !r2)) --x-- !g1 & !g2 & !r1 & !r2 & XG((!g1 | !g2) & F((g2 & r2) | (!g2 & !r2)) & F((g1 & r1) | (!g1 & !r1)) & F(!g1 | !r1) & F(!g2 | !r2)) & F(((g2 & r2) | (!g2 & !r2)) & (g2 | Xg2) & (!g2 | X!g2)) & G((((!g1 | r1) & (g1 | !r1)) | (!r1 & X!r1) | (r1 & Xr1)) & (((!g2 | r2) & (g2 | !r2)) | (!r2 & X!r2) | (r2 & Xr2)) & (((!g1 | !r1) & (g1 | r1)) | (!g1 & X!g1) | (g1 & Xg1)))
+
+ - word: !g1 & !r1 & !r2; !g1 & g2 & !r1 & !r2; !g1 & g2 & r1 & !r2; g1 & !g2 & r1 & !r2; cycle{g1 & !g2 & r1 & !r2; g1 & !g2 & !r1 & r2; !g1 & !g2 & !r1 & r2; !g1 & g2 & r1 & r2; !g1 & g2 & r1 & !r2; g1 & !g2 & r1 & !r2}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+
+======================================================================
+
+BC exists between goals: !g1 & !g2 & !r1 & !r2 & G((((!g1 | r1) & (g1 | !r1)) | (!r1 & X!r1) | (r1 & Xr1)) & (((!g2 | r2) & (g2 | !r2)) | (!r2 & X!r2) | (r2 & Xr2)) & (((!g1 | !r1) & (g1 | r1)) | (!g1 & X!g1) | (g1 & Xg1)) & (((!g2 | !r2) & (g2 | r2)) | (!g2 & X!g2) | (g2 & Xg2))) & X(F(g1 & g2) & G(F((g2 & r2) | (!g2 & !r2)) & F((g1 & r1) | (!g1 & !r1)) & F(!g1 | !r1) & F(!g2 | !r2))) --x-- !g1 & !g2 & !r1 & !r2 & XG((!g1 | !g2) & F((g2 & r2) | (!g2 & !r2)) & F((g1 & r1) | (!g1 & !r1)) & F(!g1 | !r1) & F(!g2 | !r2)) & F(((g2 & r2) | (!g2 & !r2)) & (g2 | Xg2) & (!g2 | X!g2)) & G((((!g1 | r1) & (g1 | !r1)) | (!r1 & X!r1) | (r1 & Xr1)) & (((!g2 | r2) & (g2 | !r2)) | (!r2 & X!r2) | (r2 & Xr2)) & (((!g1 | !r1) & (g1 | r1)) | (!g1 & X!g1) | (g1 & Xg1)))
+
+ - !g1 & !g2 & !r1 & !r2 & X(!g1 & !g2 & r1 & r2) & XX(!g1 & g2 & r1 & r2) & XXX(g1 & r1 & !r2) & XXXX(g1 & !g2 & !r1 & !r2) & XXXXX(!g1 & !g2 & !r1 & !r2) & XXXXXXG(!g1 & !g2 & !r1 & !r2)
+ Conflict Message:
+Prefix:
+  0
+  |  !g1 & !g2 & !r1 & !r2
+  2
+  |  !g1 & !g2 & r1 & r2
+  9
+  |  !g1 & g2 & r1 & r2
+  444
+  |  g1 & r1 & !r2
+  115
+  |  g1 & !g2 & !r1 & !r2
+  94
+  |  !g1 & !g2 & !r1 & !r2
+Cycle:
+  150
+  |  !g1 & !g2 & !r1 & !r2	{0,1}
+from 444 to 115 has conflict: g2
+
+
+BC solving time: 2.3849472999572754
+BC NUM: 1
+BC word NUM: 3

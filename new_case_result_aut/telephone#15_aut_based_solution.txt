@@ -1,0 +1,3 @@
+case name: telephone#15
+
+bc solving time: 0.005472421646118164

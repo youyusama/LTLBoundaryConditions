@@ -1,0 +1,22 @@
+case name: las#4
+allowed conflicts: m d i
+
+======================================================================
+
+BC exists between goals: F(a & !m) & G((!c | !d | n) & (!i | n) & (!c | d | !m | !n) & (h | !n)) --x-- F(c & !d & m & n) & G((!c | !d | n) & (!i | n) & (h | !n) & (!a | m))
+
+ - a & c & !d & h & n & XG((!a & h & !m & n) | (!a & !c & !i & !n) | (!a & !d & !i & !n) | (!c & !i & m & !n) | (!c & h & m & n) | (!d & !i & m & !n) | (d & h & m & n))
+ Conflict Message:
+Prefix:
+  0
+  |  a & c & !d & h & n
+Cycle:
+  1
+  |  (!a & h & !m & n) | (!a & !c & !i & !n) | (!a & !d & !i & !n) | (!c & !i & m & !n) | (!c & h & m & n) | (!d & !i & m & !n) | (d & h & m & n)	{0,1}
+from 0 to 1 has conflict: m
+
+
+BC solving time: 0.03444719314575195
+BC NUM: 1
+BC contrasty NUM: 1
+BC word NUM: 0

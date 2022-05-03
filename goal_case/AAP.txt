@@ -1,6 +1,7 @@
 CASE:achievepattern#0
 DOM:[[] (q -> s)]
 GOALS:[[] (r -> [](!s)), [] (p -> <>(q))]
+ALLOWED CONFLICT ATOMS: r, q, s
 BC:
 ( F(( ( r ) & ( X(( p )) ) )) )
 ( F(( ( r ) & ( p ) )) )

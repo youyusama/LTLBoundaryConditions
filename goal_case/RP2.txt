@@ -1,6 +1,7 @@
 CASE:retraction_pattern2#10
 DOM:[]
 GOALS:[[] (p -> (q W s)), [] (q -> r)]
+ALLOWED CONFLICT ATOMS: p,q,r,s
 BC:
 ( ( ( !(( r )) ) & ( q ) ) | ( ( ( !(( s )) ) U ( ( !(( q )) ) & ( !(( s )) ) ) ) & ( p ) ) )
 ( F(( ( p ) & ( ( !(( s )) ) U ( ( !(( r )) ) & ( !(( s )) ) ) ) )) )

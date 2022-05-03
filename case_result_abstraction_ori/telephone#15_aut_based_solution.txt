@@ -1,0 +1,6 @@
+case name: telephone#15
+allowed conflicts: o f d
+
+BC solving time: 0.009788751602172852
+BC NUM: 0
+BC word NUM: 0

@@ -1,6 +1,7 @@
 CASE:telephone#15
 DOM:[[](o -> ! c), [](c -> ! f), [](o -> ! f)]
 GOALS:[[](c  -> (c  U (f || d)) ), [](c  -> (c  U (o || d)) )]
+ALLOWED CONFLICT ATOMS: o, f, d
 BC:
 ( G(( X(( ( !(( d )) ) U ( ( c ) & ( !(( d )) ) ) )) )) )
 ( G(( ( !(( d )) ) U ( ( c ) & ( !(( d )) ) ) )) )

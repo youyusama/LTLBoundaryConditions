@@ -1,0 +1,13 @@
+case name: tcp#14
+solved bc num: 4
+bc solving time: 0.005635261535644531
+ - (delivered & (send R !ack)) | !G(send -> (!ack U delivered))
+ - X(delivered & (send R !ack)) | !G(send -> (!ack U delivered))
+ - (send & (ack R !delivered)) | !G(delivered -> (!send U ack))
+ - X(send & (ack R !delivered)) | !G(delivered -> (!send U ack))
+
+contrastive bc num: 2
+all cost time: 0.060828447341918945
+ - (delivered & (send R !ack)) | !G(send -> (!ack U delivered))
+ - (send & (ack R !delivered)) | !G(delivered -> (!send U ack))
+cover rate: 1.0

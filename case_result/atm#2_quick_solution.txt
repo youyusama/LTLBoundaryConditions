@@ -1,0 +1,12 @@
+case name: atm#2
+solved bc num: 4
+bc solving time: 0.006586790084838867
+ - (!p & (m | X!l)) | !G((!l & p) -> m)
+ - X(!p & (m | X!l)) | !G((!l & p) -> m)
+ - (!l & !m & p) | !G(!p -> (!m & Xl))
+ - X(!l & !m & p) | !G(!p -> (!m & Xl))
+
+contrastive bc num: 1
+all cost time: 0.0548710823059082
+ - (!l & !m & p) | !G(!p -> (!m & Xl))
+cover rate: 0.8

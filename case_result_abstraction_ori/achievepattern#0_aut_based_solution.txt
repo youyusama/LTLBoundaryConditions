@@ -1,0 +1,6 @@
+case name: achievepattern#0
+allowed conflicts: r q s
+
+BC solving time: 0.008126974105834961
+BC NUM: 0
+BC word NUM: 0

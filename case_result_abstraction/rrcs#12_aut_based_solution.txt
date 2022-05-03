@@ -1,0 +1,7 @@
+case name: rrcs#12
+allowed conflicts: go
+
+BC solving time: 0.032859086990356445
+BC NUM: 0
+BC contrasty NUM: 0
+BC word NUM: 0

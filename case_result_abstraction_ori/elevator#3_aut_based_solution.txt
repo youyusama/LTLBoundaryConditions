@@ -1,0 +1,35 @@
+case name: elevator#3
+allowed conflicts: open atfloor
+
+======================================================================
+
+BC exists between goals: G(!call | Fopen) & F(!atfloor & Xopen) --x-- F(call & G!open) & G(atfloor | X!open)
+
+ - !atfloor & Xcall & XXG(!call & !open)
+ Conflict Message:
+Prefix:
+  0
+  |  !atfloor
+  5
+  |  call
+Cycle:
+  7
+  |  !call & !open	{0,1}
+from 5 to 7 has conflict: open
+
+ - !atfloor & call & !open & XXG(!call & !open)
+ Conflict Message:
+Prefix:
+  0
+  |  !atfloor & call & !open
+  4
+  |  1	{1}
+Cycle:
+  7
+  |  !call & !open	{0,1}
+from 4 to 7 has conflict: open
+
+
+BC solving time: 0.004901885986328125
+BC NUM: 2
+BC word NUM: 0

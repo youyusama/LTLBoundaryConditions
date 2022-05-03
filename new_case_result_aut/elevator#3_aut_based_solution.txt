@@ -1,0 +1,3 @@
+case name: elevator#3
+
+bc solving time: 0.0044214725494384766

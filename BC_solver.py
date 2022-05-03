@@ -8,11 +8,11 @@ import spot
 from ltl_sat_check import sat_check
 import time
 from GORE import GoreCase
-from aut_based_solution import *
+from aut_based_abstraction import *
 from quick_solution import *
 
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description='Part-of-Speech Testing')
+  parser = argparse.ArgumentParser(description='Boundary Condition Solver')
   parser.add_argument('-m', '--method', choices=['aut', 'quick'], default='aut', help='the method to solve BCs')
   parser.add_argument('-c', '--case', default='AAP', help='the case to solve')
   args = parser.parse_args()
@@ -41,8 +41,11 @@ if __name__ == "__main__":
       if line.startswith('GOALS:'):
         line = line[7:-1]
         temp_case['goals'] = line.split(',')
+      if line.startswith('ALLOWED CONFLICT ATOMS:'):
+        line = line[len('ALLOWED CONFLICT ATOMS:'):]
+        temp_case['allowedconflict'] = line.split(',')
 
-  goal_case = GoreCase(temp_case['name'], temp_case['doms'], temp_case['goals'], temp_case['BC'])
+  goal_case = GoreCase(temp_case['name'], temp_case['doms'], temp_case['goals'], temp_case['BC'], temp_case['allowedconflict'])
 
   if args.method == 'aut':
     get_bc_by_aut(goal_case)

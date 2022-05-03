@@ -1,0 +1,96 @@
+case name: minepump#7
+allowed conflicts: p
+
+======================================================================
+
+BC exists between goals: F(h & X!p) & G((!m | X!p) & (!p | X(!p | X!h))) --x-- F(m & Xp) & G((!p | X(!p | X!h)) & (!h | Xp))
+
+ - !h & !m & p & X(h & m & p) & XX(!h & m) & XXX(!h & m & !p) & XXXXG(!h & m & !p)
+ Conflict Message:
+Prefix:
+  0
+  |  !h & !m & p
+  13
+  |  h & m & p
+  73
+  |  !h & m	{0,1}
+  49
+  |  !h & m & !p	{0,1}
+Cycle:
+  51
+  |  !h & m & !p	{0,1}
+from 73 to 49 has conflict: p
+
+ - !h & !m & p & X(h & m & p) & XXX(!h & m & !p) & XXXXG(!h & m & !p) & XX(!h & !m)
+ Conflict Message:
+Prefix:
+  0
+  |  !h & !m & p
+  13
+  |  h & m & p
+  73
+  |  !h & !m	{0,1}
+  50
+  |  !h & m & !p	{0,1}
+Cycle:
+  51
+  |  !h & m & !p	{0,1}
+from 73 to 50 has conflict: p
+
+ - word: h & m & !p; cycle{!h & m; h & m & !p}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: h & m & !p; cycle{h & !m; !h & m & p; !h & m & !p; h & m & !p}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - word: h & m & !p; cycle{!h & !m; h & m & !p}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - h & m & p & X(!h & m) & XX(!h & m & !p) & XXXG(!h & m & !p)
+ Conflict Message:
+Prefix:
+  0
+  |  h & m & p
+  4
+  |  !h & m	{0,1}
+  49
+  |  !h & m & !p	{0,1}
+Cycle:
+  51
+  |  !h & m & !p	{0,1}
+from 4 to 49 has conflict: p
+
+ - h & m & p & XXX(!h & m & !p) & XXXXG(!h & m & !p) & X(h & !m) & XX(!h & m & p)
+ Conflict Message:
+Prefix:
+  0
+  |  h & m & p
+  4
+  |  h & !m	{0,1}
+  68
+  |  !h & m & p	{0,1}
+  49
+  |  !h & m & !p	{0,1}
+Cycle:
+  51
+  |  !h & m & !p	{0,1}
+from 4 to 68 has conflict: p
+
+ - h & m & p & XX(!h & m & !p) & XXXG(!h & m & !p) & X(!h & !m)
+ Conflict Message:
+Prefix:
+  0
+  |  h & m & p
+  4
+  |  !h & !m	{0,1}
+  50
+  |  !h & m & !p	{0,1}
+Cycle:
+  51
+  |  !h & m & !p	{0,1}
+from 4 to 50 has conflict: p
+
+
+BC solving time: 0.038202762603759766
+BC NUM: 5
+BC word NUM: 3

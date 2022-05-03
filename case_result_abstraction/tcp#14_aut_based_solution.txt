@@ -1,0 +1,78 @@
+case name: tcp#14
+allowed conflicts: delivered send ack
+
+======================================================================
+
+BC exists between goals: G(!send | (!ack U delivered)) & F(delivered & (send R !ack)) --x-- G(!delivered | (!send U ack)) & F(send & (ack R !delivered))
+
+ - !ack & send & X(ack & !delivered & !send) & XXG((!delivered & !send) | (ack & delivered))
+ Conflict Message:
+Prefix:
+  0
+  |  !ack & send
+  6
+  |  ack & !delivered & !send	{0}
+Cycle:
+  16
+  |  (!delivered & !send) | (ack & delivered)	{0,1}
+from 0 to 6 has conflict: delivered
+
+ - !ack & !delivered & send & X(!ack & send) & XX(ack & !delivered & !send) & XXXG((!delivered & !send) | (ack & delivered))
+ Conflict Message:
+Prefix:
+  0
+  |  !ack & !delivered & send
+  11
+  |  !ack & send	{1}
+  6
+  |  ack & !delivered & !send	{0}
+Cycle:
+  16
+  |  (!delivered & !send) | (ack & delivered)	{0,1}
+from 11 to 6 has conflict: delivered
+
+ - !ack & !delivered & send & X(!ack & !send) & XXG(!ack & !delivered & !send)
+ Conflict Message:
+Prefix:
+  0
+  |  !ack & !delivered & send
+  11
+  |  !ack & !send	{1}
+Cycle:
+  12
+  |  !ack & !delivered & !send	{0,1}
+from 11 to 12 has conflict: delivered
+
+ - !ack & !delivered & send & X(!ack & send) & XX(ack & !delivered & !send) & XXXG((!delivered & !send) | (ack & delivered))
+ Conflict Message:
+Prefix:
+  0
+  |  !ack & !delivered & send
+  9
+  |  !ack & send
+  6
+  |  ack & !delivered & !send	{0}
+Cycle:
+  16
+  |  (!delivered & !send) | (ack & delivered)	{0,1}
+from 9 to 6 has conflict: delivered
+
+ - !ack & delivered & !send & XXXG((!delivered & !send) | (ack & delivered)) & X(!delivered & send) & XX(ack & delivered)
+ Conflict Message:
+Prefix:
+  0
+  |  !ack & delivered & !send
+  8
+  |  !delivered & send
+  14
+  |  ack & delivered	{0,1}
+Cycle:
+  16
+  |  (!delivered & !send) | (ack & delivered)	{0,1}
+from 8 to 14 has conflict: ack
+
+
+BC solving time: 0.4711484909057617
+BC NUM: 5
+BC contrasty NUM: 5
+BC word NUM: 0

@@ -1,0 +1,3 @@
+case name: achievepattern#0
+
+bc solving time: 0.01978588104248047

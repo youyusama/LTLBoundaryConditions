@@ -1,5 +1,6 @@
 CASE:prioritized_arbiter#8
 DOM:[[] (<> (! r_m))]
 GOALS:[[] (r_m -> X ((! g_0 && ! g_1) U g_m)), [] (! g_0 && true || (true && (! g_1))), [] (! (g_m && g_0)), [] (! (g_m && g_1)), [] (r_0 -> <> g_0) && [] (r_1 -> <> g_1), [] (r_0 && X r_1 -> X (X (g_0 && g_1)))]
+ALLOWED CONFLICT ATOMS: g_0, g_1, g_m, r_1 , r_m
 BC:
 ( F(( F(( G(( ( ( r0 ) & ( r1 ) ) | ( ( rm ) & ( X(( ( ( g0 ) | ( g1 ) ) U ( !(( gm )) ) )) ) ) )) )) )) )

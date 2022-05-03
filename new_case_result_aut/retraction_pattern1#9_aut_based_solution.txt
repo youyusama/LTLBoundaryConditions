@@ -1,0 +1,3 @@
+case name: retraction_pattern1#9
+
+bc solving time: 0.0026674270629882812

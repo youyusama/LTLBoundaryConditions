@@ -1,0 +1,7 @@
+case name: loadbalancer#6
+solved bc num: 0
+bc solving time: 0.010405540466308594
+
+contrastive bc num: 0
+all cost time: 0.010407447814941406
+cover rate: 0

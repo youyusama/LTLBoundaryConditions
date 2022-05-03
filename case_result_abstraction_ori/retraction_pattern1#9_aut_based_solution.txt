@@ -1,0 +1,23 @@
+case name: retraction_pattern1#9
+allowed conflicts: p q
+
+======================================================================
+
+BC exists between goals: F(p & G!q) & G(p | !q) --x-- F(!p & q) & G(!p | Fq)
+
+ - p & !q & X!p & XXG(!p & !q)
+ Conflict Message:
+Prefix:
+  0
+  |  p & !q
+  2
+  |  !p	{0}
+Cycle:
+  3
+  |  !p & !q	{0,1}
+from 2 to 3 has conflict: q
+
+
+BC solving time: 0.0032753944396972656
+BC NUM: 1
+BC word NUM: 0

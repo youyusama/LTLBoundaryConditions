@@ -1,0 +1,12 @@
+case name: rrcs#12
+solved bc num: 3
+bc solving time: 0.00829172134399414
+ - (go & ta) | !G(tc -> !cc)
+ - X(go & ta) | !G(tc -> !cc)
+ - (cc & tc) | !G(ta -> !go)
+
+contrastive bc num: 2
+all cost time: 0.03466367721557617
+ - (go & ta) | !G(tc -> !cc)
+ - (cc & tc) | !G(ta -> !go)
+cover rate: 0.0

@@ -1,0 +1,113 @@
+case name: achievepattern#0
+allowed conflicts: r q s
+
+======================================================================
+
+BC exists between goals: G((!r | G!s) & (!p | Fq)) & F(q & !s) --x-- F(r & Fs) & G((!q | s) & (!p | Fq))
+
+ - q & r & XG(!p & !q & !s)
+ Conflict Message:
+Prefix:
+  0
+  |  q & r
+Cycle:
+  12
+  |  !p & !q & !s	{0,1}
+from 0 to 12 has conflict: s, s
+
+ - word: p & !q & r & !s; cycle{q; p & !q & !s}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - !p & !q & r & !s & Xq & XXG(!p & !q & !s)
+ Conflict Message:
+Prefix:
+  0
+  |  !p & !q & r & !s
+  10
+  |  q	{0}
+Cycle:
+  12
+  |  !p & !q & !s	{0,1}
+from 10 to 12 has conflict: s, s
+
+ - p & !q & !r & XXG(!p & !q & !s) & X(q & r)
+ Conflict Message:
+Prefix:
+  0
+  |  p & !q & !r
+  2
+  |  q & r
+Cycle:
+  12
+  |  !p & !q & !s	{0,1}
+from 2 to 12 has conflict: s
+
+
+======================================================================
+
+BC exists between goals: G((!r | G!s) & (!p | Fq)) & F(q & !s) --x-- F(p & G!q) & G((!q | s) & (!r | G!s))
+
+ - p & !r & !s & XG(!p & !q & !r)
+ Conflict Message:
+Prefix:
+  0
+  |  p & !r & !s
+Cycle:
+  5
+  |  !p & !q & !r	{0,1}
+from 0 to 5 has conflict: q
+
+ - p & r & !s & XG(!p & !q & !s)
+ Conflict Message:
+Prefix:
+  0
+  |  p & r & !s
+Cycle:
+  11
+  |  !p & !q & !s	{0,1}
+from 0 to 11 has conflict: q
+
+ - word: p & !q & r & !s; cycle{!q & !s; !s; p & !q & !s}
+ Conflict Message:
+a run of BC, can not be transferred to a formula
+ - !p & !q & r & !s & XXG(!p & !q & !s) & X(p & !s)
+ Conflict Message:
+Prefix:
+  0
+  |  !p & !q & r & !s
+  8
+  |  p & !s	{0}
+Cycle:
+  11
+  |  !p & !q & !s	{0,1}
+from 8 to 11 has conflict: q
+
+ - p & !q & !r & X(!r & !s) & XXG(!p & !q & !r)
+ Conflict Message:
+Prefix:
+  0
+  |  p & !q & !r
+  1
+  |  !r & !s	{1}
+Cycle:
+  5
+  |  !p & !q & !r	{0,1}
+from 1 to 5 has conflict: q
+
+ - p & !q & !r & XXG(!p & !q & !s) & X(r & !s)
+ Conflict Message:
+Prefix:
+  0
+  |  p & !q & !r
+  1
+  |  r & !s	{1}
+Cycle:
+  11
+  |  !p & !q & !s	{0,1}
+from 1 to 11 has conflict: q
+
+
+BC solving time: 0.3786458969116211
+BC NUM: 8
+BC contrasty NUM: 8
+BC word NUM: 2

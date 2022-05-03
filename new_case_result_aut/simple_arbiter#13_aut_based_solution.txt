@@ -1,0 +1,3 @@
+case name: simple_arbiter#13
+
+bc solving time: 0.02331829071044922

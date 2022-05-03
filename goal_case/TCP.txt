@@ -1,6 +1,7 @@
 CASE:tcp#14
 DOM:[]
 GOALS:[[] (delivered -> (!send U ack)), [](send -> (!ack U delivered))]
+ALLOWED CONFLICT ATOMS: delivered, send, ack
 BC:
 ( F(( G(( ( ( send ) & ( !(( ack )) ) ) & ( send ) )) )) )
 ( G(( ( ( send ) & ( !(( ack )) ) ) & ( send ) )) )

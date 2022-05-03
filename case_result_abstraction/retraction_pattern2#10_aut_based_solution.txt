@@ -1,0 +1,38 @@
+case name: retraction_pattern2#10
+allowed conflicts: p q r s
+
+======================================================================
+
+BC exists between goals: F(p & (!q M !s)) & G(!q | r) --x-- F(q & !r) & G(!p | (q W s))
+
+ - p & !r & !s & X((!q & s) | (r & s)) & XXG((!q & s) | (r & s) | (!p & !q) | (!p & r))
+ Conflict Message:
+Prefix:
+  0
+  |  p & !r & !s
+  6
+  |  (!q & s) | (r & s)	{0,1}
+Cycle:
+  9
+  |  (!q & s) | (r & s) | (!p & !q) | (!p & r)	{0,1}
+from 0 to 6 has conflict: q
+
+ - p & q & r & !s & X(!r & !s) & XX((!q & s) | (r & s)) & XXXG((!q & s) | (r & s) | (!p & !q) | (!p & r))
+ Conflict Message:
+Prefix:
+  0
+  |  p & q & r & !s
+  5
+  |  !r & !s
+  6
+  |  (!q & s) | (r & s)	{0,1}
+Cycle:
+  9
+  |  (!q & s) | (r & s) | (!p & !q) | (!p & r)	{0,1}
+from 5 to 6 has conflict: q
+
+
+BC solving time: 0.052585601806640625
+BC NUM: 2
+BC contrasty NUM: 2
+BC word NUM: 0

@@ -1,0 +1,7 @@
+case name: atm#2
+allowed conflicts: l m
+
+BC solving time: 0.011708259582519531
+BC NUM: 0
+BC contrasty NUM: 0
+BC word NUM: 0
